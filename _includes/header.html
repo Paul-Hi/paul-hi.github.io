@@ -1,0 +1,29 @@
+<header role="banner" class="absolute-top">
+
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+
+        <div class="container-fluid">
+            <a class="navbar-brand ms-lg-2">Paul Himmler</a>
+
+            <!------------------------------->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false", aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!------------------------------->
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ms-lg-auto">
+                    {% for item in site.data.navigation.pages %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if item.url == page.url %}active{% endif %}" href="{{ item.url }}">{{
+                            item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

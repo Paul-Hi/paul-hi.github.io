@@ -1,0 +1,76 @@
+// Toggle global options
+$enable-gradients: false;
+$enable-shadows: true;
+
+@import "bootstrap/_functions";
+
+// Include any default variable overrides here
+
+$primary: #83a2ff;
+$secondary: #39539e;
+$success: #00ad63;
+$danger: #f61700;
+$warning: #e5cd00;
+$info: #ec3965;
+$light: #d1f6fc;
+$dark: #08143a;
+
+$border-radius: .2rem;
+
+// Required
+@import "bootstrap/_variables";
+@import "bootstrap/_variables-dark";
+@import "bootstrap/_maps";
+@import "bootstrap/mixins";
+@import "bootstrap/utilities";
+@import "bootstrap/_root";
+@import "bootstrap/_reboot";
+
+
+
+@import "bootstrap/_type";
+// @import "bootstrap/_images";
+@import "bootstrap/_containers";
+@import "bootstrap/_grid";
+// @import "bootstrap/_tables";
+@import "bootstrap/forms";
+@import "bootstrap/_buttons";
+@import "bootstrap/_transitions";
+@import "bootstrap/_dropdown";
+@import "bootstrap/_button-group";
+@import "bootstrap/_nav";
+@import "bootstrap/_navbar"; // Requires nav
+// @import "bootstrap/_card";
+// @import "bootstrap/_breadcrumb";
+// @import "bootstrap/_accordion";
+// @import "bootstrap/_pagination";
+// @import "bootstrap/_badge";
+// @import "bootstrap/_alert";
+// @import "bootstrap/_progress";
+// @import "bootstrap/_list-group";
+// @import "bootstrap/_close";
+// @import "bootstrap/_toasts";
+// @import "bootstrap/_modal"; // Requires transitions
+// @import "bootstrap/_tooltip";
+// @import "bootstrap/_popover";
+// @import "bootstrap/_carousel";
+// @import "bootstrap/_spinners";
+// @import "bootstrap/_offcanvas"; // Requires transitions
+// @import "bootstrap/_placeholders";
+
+// Helpers
+// @import "bootstrap/helpers";
+
+// Utilities
+@import "bootstrap/utilities/_api";
+
+
+
+// custom
+
+
+.project-showcase {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

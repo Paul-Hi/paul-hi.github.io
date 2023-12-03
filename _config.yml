@@ -1,0 +1,8 @@
+url: "paulhi.github.io"
+baseurl: ""
+title: "Paul Himmler"
+
+sass:
+  load_paths:
+    - _sass
+    - C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/bootstrap-5.3.2/assets/stylesheets
