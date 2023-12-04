@@ -6,3 +6,4 @@ sass:
   load_paths:
     - _sass
     - C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/bootstrap-5.3.2/assets/stylesheets
+    - C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/bootstrap-5.3.2/assets/stylesheets

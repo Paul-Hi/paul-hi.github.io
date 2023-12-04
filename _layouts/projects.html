@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container px-4 py-5 fade-in" id="project-cards">
+    <h2 class="pb-3 display-6 border-bottom"> {{ page.title }} </h2>
+
+    <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+        {% for proj in site.data.projects.project-list %}
+        <div class="col  project-showcase-col">
+            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)), url({{ proj.image }});">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            {{ proj.icon }}
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>{{ proj.type }}</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

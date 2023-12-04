@@ -1,6 +1,4 @@
 ---
-layout: default
+layout: projects
 title: "Projects"
 ---
-
-

@@ -3,7 +3,8 @@
 
 {% include head.html %}
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100"
+    onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
     {% include header.html %}
 
     {{ content }}

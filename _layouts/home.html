@@ -2,11 +2,19 @@
 layout: default
 ---
 
-<div class="container col-xxl-8 px-4 py-5">
+<div class="container col-xxl-8 px-4 py-5 fade-in">
     <div class="row flex-lg-row align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
-                class="rounded-circle ms-lg-auto" loading="lazy">
+            <div class="d-flex">
+                <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
+                    class="rounded-circle ms-lg-auto" loading="lazy">
+                <ul class="social-list d-flex mt-3 mx-auto ps-3 pt-3">
+                    <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github pe-3"></i></a></li>
+                    <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
+                                class="fa-brands fa-linkedin pe-3"></i></a></li>
+                    <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter pe-3"></i></a></li>
+                </ul>
+            </div>
         </div>
         <div class=" col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
@@ -16,52 +24,37 @@ layout: default
     </div>
 </div>
 
-<div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom">Current Projects</h2>
+<div class="container px-4 py-5  fade-in" id="first-project-cards">
+    <h2 class="pb-3 display-6 border-bottom">Projects</h2>
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
-        <div class="col">
+        {% for proj in site.data.projects.project-list limit:2 %}
+        <div class="col  project-showcase-col">
             <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url('assets/images/paperBG.png');">
+                rgba(0, 0, 0, 0.6)), url({{ proj.image }});">
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Transmittance-based Visibility and Viewpoint
-                        Optimization</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
-                            <i class="fa-solid fa-building-columns"></i>
+                            {{ proj.icon }}
                         </li>
                         <li class="d-flex align-items-center me-3">
-                            <small>Research</small>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <small></small>
+                            <small>{{ proj.type }}</small>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+        {% endfor %}
+    </div>
 
-        <!---------------------------->
+    <!-------------------------------------->
 
-        <div class="col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                    rgba(0, 0, 0, 0.6)), url('assets/images/rayceBG.png');">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Rayce: Hardware Accelerated Pathtracing with
-                        Vulkan</h3>
-                    <ul class="d-flex list-unstyled mt-auto">
-                        <li class="me-auto">
-                            <i class="fa-regular fa-face-smile-beam"></i>
-                        </li>
-                        <li class="d-flex align-items-center me-3">
-                            <small>Leisure Research</small>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <small></small>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="d-flex">
+        <div class="nav-item mx-auto">
+            <a class="nav-link border rounded-2" href="/projects.html">
+                <h3 class="no-hover px-2 display-6">More</h3>
+            </a>
         </div>
     </div>
 </div>

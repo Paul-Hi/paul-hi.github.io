@@ -20,7 +20,8 @@
     <script src="/%20/assets/js/theme_toggle.js"></script>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100"
+    onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
     <header role="banner" class="absolute-top">
 
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
@@ -31,7 +32,7 @@
             <!------------------------------->
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
-                aria-controls="myNavbar" aria-expanded="false", aria-label="Toggle navigation">
+                aria-controls="myNavbar" aria-expanded="false" , aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
 
@@ -41,19 +42,27 @@
                 <ul class="navbar-nav ms-lg-auto">
                     
                     <li class="nav-item">
-                        <a class="nav-link " href="/index.html"><i class="fa-regular fa-square"></i> Home</a>
+                        <a class="nav-link " href="/index.html">
+                            <span><i class="fa-regular fa-square no-hover"></i> Home</span>
+                        </a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link active" href="/projects.html"><i class="fa-regular fa-circle"></i> Projects</a>
+                        <a class="nav-link active" href="/projects.html">
+                            <span><i class="fa-regular fa-circle no-hover"></i> Projects</span>
+                        </a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link " href="/about.html"><i class="fa-solid fa-info"></i> About</a>
+                        <a class="nav-link " href="/about.html">
+                            <span><i class="fa-solid fa-info no-hover"></i> About</span>
+                        </a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link " href="/blog.html"><i class="fa-solid fa-pen"></i> Blog</a>
+                        <a class="nav-link " href="/blog.html">
+                            <span><i class="fa-solid fa-pen no-hover"></i> Blog</span>
+                        </a>
                     </li>
                     
                 </ul>
@@ -62,11 +71,101 @@
     </nav>
 </header>
 
-    
+    <div class="container px-4 py-5 fade-in" id="project-cards">
+    <h2 class="pb-3 display-6 border-bottom"> Projects </h2>
 
+    <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+        
+        <div class="col  project-showcase-col">
+            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)), url(assets/images/paperBG.png);">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Transmittance-based Visibility and Viewpoint Optimization</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)), url(assets/images/rayceBG.png);">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Rayce: Hardware Accelerated Pathtracing with Vulkan</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-regular fa-face-smile-beam"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Leisure Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)), url(assets/images/mastersBG.png);">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Electromagnetic Wave Transport with Maxwell's Equations</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)), url(assets/images/safBG.png);">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">SAF: Simple Application Framework</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-solid fa-building-columns"></i> <i class="fa-regular fa-face-smile-beam"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Leisure Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)), url(assets/images/mangoBG.png);">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Mango: Graphics Playground/Engine</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-regular fa-face-smile-beam"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Leisure Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
 
     <footer
-    class="d-flex flex-wrap justify-content-between align-items-center border-top mt-auto py-3 bg-body-tertiary">
+    class="d-flex flex-wrap justify-content-between align-items-center mt-auto py-3 bg-body-tertiary">
     <!-- <ul class="list-unstyled list-inline text-center py-3">
         <li class="list-inline-item">
             <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Paul-Hi/Mango">
