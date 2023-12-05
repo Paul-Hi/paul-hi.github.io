@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto">
 
 {% include head.html %}
 
-<body class="d-flex flex-column h-100"
+<body class="d-flex flex-column"
     onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
     {% include header.html %}
 
-    {{ content }}
+    <div class="content-container">
+        {{ content }}
+    </div>
 
     {% include footer.html %}
 

@@ -8,17 +8,19 @@ layout: default
             <div class="d-flex">
                 <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
                     class="rounded-circle ms-lg-auto" loading="lazy">
-                <ul class="social-list d-flex mt-3 mx-auto ps-3 pt-3">
-                    <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github pe-3"></i></a></li>
+                <ul class="social-list d-flex flex-column mx-auto ps-3">
+                    <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github"></i></a></li>
                     <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
-                                class="fa-brands fa-linkedin pe-3"></i></a></li>
-                    <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter pe-3"></i></a></li>
+                                class="fa-brands fa-linkedin"></i></a></li>
+                    <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li> <a href=""><i class="fa-brands fa-google-scholar"></i></i></a></li>
+                    <li> <a href=""><i class="fa-brands fa-researchgate"></i></i></a></li>
                 </ul>
             </div>
         </div>
         <div class=" col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
-            <p class="lead">I am a PhD candidate at the Professorship for Visual Computing at FAU Erlangen-Nürnberg,
+            <p class="lead">I am a PhD candidate at the <a  href="https://vc.tf.fau.de/">Professorship for Visual Computing</a> at FAU Erlangen-Nürnberg,
                 supervised by Prof. Dr.-Ing. Tobias Günther.</p>
         </div>
     </div>
@@ -30,9 +32,10 @@ layout: default
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         {% for proj in site.data.projects.project-list limit:2 %}
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url({{ proj.image }});">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden rounded-4 project-showcase" data-bs-toggle="modal"
+                href="#modal{{ forloop.index }}">
+                <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image">
+                <div class="d-flex card-img-overlay flex-column p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -47,6 +50,23 @@ layout: default
         </div>
         {% endfor %}
     </div>
+    {% for proj in site.data.projects.project-list limit:2 %}
+    <div class="modal fade" id="modal{{ forloop.index }}" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">{{ proj.title }}</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    {{ proj.data }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 
     <!-------------------------------------->
 

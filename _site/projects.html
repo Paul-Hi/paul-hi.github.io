@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto">
 
 <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <script src="/%20/assets/js/theme_toggle.js"></script>
 </head>
 
-<body class="d-flex flex-column h-100"
+<body class="d-flex flex-column"
     onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
     <header role="banner" class="absolute-top">
 
@@ -71,15 +71,17 @@
     </nav>
 </header>
 
-    <div class="container px-4 py-5 fade-in" id="project-cards">
+    <div class="content-container">
+        <div class="container px-4 py-5 fade-in" id="project-cards">
     <h2 class="pb-3 display-6 border-bottom"> Projects </h2>
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/paperBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase data-bs-toggle="modal"
+                href="#modal1" data-bs-toggle="modal" href="#modal1">
+                <img class="card-img card-cover" src="assets/images/paperBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Transmittance-based Visibility and Viewpoint Optimization</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -94,9 +96,10 @@
         </div>
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/rayceBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase data-bs-toggle="modal"
+                href="#modal2" data-bs-toggle="modal" href="#modal2">
+                <img class="card-img card-cover" src="assets/images/rayceBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Rayce: Hardware Accelerated Pathtracing with Vulkan</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -111,9 +114,10 @@
         </div>
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/mastersBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase data-bs-toggle="modal"
+                href="#modal3" data-bs-toggle="modal" href="#modal3">
+                <img class="card-img card-cover" src="assets/images/mastersBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Electromagnetic Wave Transport with Maxwell's Equations</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -128,9 +132,10 @@
         </div>
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/safBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase data-bs-toggle="modal"
+                href="#modal4" data-bs-toggle="modal" href="#modal4">
+                <img class="card-img card-cover" src="assets/images/safBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">SAF: Simple Application Framework</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -145,9 +150,10 @@
         </div>
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/mangoBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase data-bs-toggle="modal"
+                href="#modal5" data-bs-toggle="modal" href="#modal5">
+                <img class="card-img card-cover" src="assets/images/mangoBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Mango: Graphics Playground/Engine</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -162,10 +168,91 @@
         </div>
         
     </div>
+    
+    <div class="modal fade" id="modal1" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Transmittance-based Visibility and Viewpoint Optimization</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p class="fw-bold">EuroVis 2024 (Under Review)</p> <p>A long-standing challenge in volume visualization is the effective communication of relevant spatial structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples along view rays or by optimizing the extinction through an energy minimization. The contribution of an individual sample to the final pixel color is determined by the so-called transmittance, which, however, has previously not been part of the objective function. In this paper, we propose to measure the visibility of relevant structures directly by incorporating the transmittance into a non-linear energy minimization. For the first time, we not only perform a transmittance-based visibility optimization, we concurrently optimize the camera position to find ideal viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives a direct visibility measure that is communicated to the user in order to make aware of potentially overlooked relevant structures. Our approach is compatible with any measure of importance and its versatility is demonstrated in multiple data sets. </p> <a href=""> [Project Page] </a> <br> <a href=""> [arXiv] </a> <br> <a href=""> [Code] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modal2" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Rayce: Hardware Accelerated Pathtracing with Vulkan</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <a href="https://github.com/Paul-Hi/Rayce"> [Code] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modal3" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Electromagnetic Wave Transport with Maxwell's Equations</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p class="fw-bold">Master's Thesis (graded 1.0)</p> <p> Understanding and simulating the general behavior of electromagnetic waves in arbitrary environments is a challenging problem, not only in mathematical or physical terms, but also in algorithmic terms. Mathematical formulations based on physical observations, such as Maxwell’s equations, do exist, but their calculation is a complex and difficult undertaking. At the same time, an understanding of these processes is of paramount importance because the sheer size of the electromagnetic spectrum means that the applications are also diverse. From X-rays in medicine, to visible light in visualization, to radar waves, such as those used in the automotive industry, to name just a few direct fields of application. In addition, many other scenarios such as quantum mechanics or audio wave simulation could benefit from a general algorithmic description for electromagnetic wave behavior. Particularly, wave properties such as diffraction and interference are of high interest. Thus, to gain important insights, a computer simulation of the real world behavior of electromagnetic waves would be of great benefit. By its very nature, it is not easy to build such a simulation since it requires solving a second-order linear partial differential equation, the wave equation. Moreover, many of the defining properties occur only at relatively small scales, which poses numerical problems. There are strategies such as the Finite-Difference Time-Domain Method or the Method of Moments. However, they suffer from limitations regarding domain size or overall accuracy. We present a method based on Monte Carlo integration that attempts to overcome any discretization constraints, showcasing a different approach to the problem. In this thesis, a brief overview of the physical and mathematical basics is given at the beginning. In addition, related work and alternative approaches are discussed. Then, we proceed with the development of the Monte Carlo Waves method to simulate electromagnetic waves. Our method solves the inhomogeneous Helmholtz equation in several subdomains. For this, we must find valid boundary conditions to achieve physically plausible results. After explaining the principle algorithm, an analysis of the results is presented. In order to consolidate the presented approach, it is compared to existing methods. At the end, an outlook is given and possible further developments are discussed. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modal4" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">SAF: Simple Application Framework</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <a href="https://github.com/Paul-Hi/SAF"> [Code] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modal5" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Mango: Graphics Playground/Engine</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <a href="https://github.com/Paul-Hi/Rayce"> [Code] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
+    </div>
 
-    <footer
-    class="d-flex flex-wrap justify-content-between align-items-center mt-auto py-3 bg-body-tertiary">
+    <footer class="d-flex justify-content-around align-items-center mt-auto py-3 bg-body-tertiary">
     <!-- <ul class="list-unstyled list-inline text-center py-3">
         <li class="list-inline-item">
             <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Paul-Hi/Mango">
@@ -173,14 +260,14 @@
             </a>
         </li>
     </ul>-->
-    <div class="text-center1 ms-auto" id="bd-theme">
+    <div class="text-center" id="bd-theme">
         © 2023 Copyright: Paul Himmler
         <br>
         Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
         Hosted at <a href="https://pages.github.com">Github</a>.
     </div>
 
-    <div class="btn-group me-3 ms-auto" id="bd-theme">
+    <div class="btn-group me-3" id="bd-theme">
         <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
         <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
                 class="fa-regular fa-lightbulb"></i></label>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto">
 
 <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <script src="/%20/assets/js/theme_toggle.js"></script>
 </head>
 
-<body class="d-flex flex-column h-100"
+<body class="d-flex flex-column"
     onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
     <header role="banner" class="absolute-top">
 
@@ -71,23 +71,26 @@
     </nav>
 </header>
 
-    <div class="container col-xxl-8 px-4 py-5 fade-in">
+    <div class="content-container">
+        <div class="container col-xxl-8 px-4 py-5 fade-in">
     <div class="row flex-lg-row align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
             <div class="d-flex">
                 <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
                     class="rounded-circle ms-lg-auto" loading="lazy">
-                <ul class="social-list d-flex mt-3 mx-auto ps-3 pt-3">
-                    <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github pe-3"></i></a></li>
+                <ul class="social-list d-flex flex-column mx-auto ps-3">
+                    <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github"></i></a></li>
                     <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
-                                class="fa-brands fa-linkedin pe-3"></i></a></li>
-                    <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter pe-3"></i></a></li>
+                                class="fa-brands fa-linkedin"></i></a></li>
+                    <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li> <a href=""><i class="fa-brands fa-google-scholar"></i></i></a></li>
+                    <li> <a href=""><i class="fa-brands fa-researchgate"></i></i></a></li>
                 </ul>
             </div>
         </div>
         <div class=" col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
-            <p class="lead">I am a PhD candidate at the Professorship for Visual Computing at FAU Erlangen-Nürnberg,
+            <p class="lead">I am a PhD candidate at the <a  href="https://vc.tf.fau.de/">Professorship for Visual Computing</a> at FAU Erlangen-Nürnberg,
                 supervised by Prof. Dr.-Ing. Tobias Günther.</p>
         </div>
     </div>
@@ -99,9 +102,10 @@
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/paperBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden rounded-4 project-showcase" data-bs-toggle="modal"
+                href="#modal1">
+                <img class="card-img card-cover" src="assets/images/paperBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay flex-column p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Transmittance-based Visibility and Viewpoint Optimization</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -116,9 +120,10 @@
         </div>
         
         <div class="col  project-showcase-col">
-            <div class="card card-cover bg-image h-100 overflow-hidden rounded-4 project-showcase" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),
-                rgba(0, 0, 0, 0.6)), url(assets/images/rayceBG.png);">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card overflow-hidden rounded-4 project-showcase" data-bs-toggle="modal"
+                href="#modal2">
+                <img class="card-img card-cover" src="assets/images/rayceBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay flex-column p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Rayce: Hardware Accelerated Pathtracing with Vulkan</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -133,6 +138,39 @@
         </div>
         
     </div>
+    
+    <div class="modal fade" id="modal1" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Transmittance-based Visibility and Viewpoint Optimization</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p class="fw-bold">EuroVis 2024 (Under Review)</p> <p>A long-standing challenge in volume visualization is the effective communication of relevant spatial structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples along view rays or by optimizing the extinction through an energy minimization. The contribution of an individual sample to the final pixel color is determined by the so-called transmittance, which, however, has previously not been part of the objective function. In this paper, we propose to measure the visibility of relevant structures directly by incorporating the transmittance into a non-linear energy minimization. For the first time, we not only perform a transmittance-based visibility optimization, we concurrently optimize the camera position to find ideal viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives a direct visibility measure that is communicated to the user in order to make aware of potentially overlooked relevant structures. Our approach is compatible with any measure of importance and its versatility is demonstrated in multiple data sets. </p> <a href=""> [Project Page] </a> <br> <a href=""> [arXiv] </a> <br> <a href=""> [Code] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modal2" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Rayce: Hardware Accelerated Pathtracing with Vulkan</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <a href="https://github.com/Paul-Hi/Rayce"> [Code] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <!-------------------------------------->
 
@@ -144,9 +182,9 @@
         </div>
     </div>
 </div>
+    </div>
 
-    <footer
-    class="d-flex flex-wrap justify-content-between align-items-center mt-auto py-3 bg-body-tertiary">
+    <footer class="d-flex justify-content-around align-items-center mt-auto py-3 bg-body-tertiary">
     <!-- <ul class="list-unstyled list-inline text-center py-3">
         <li class="list-inline-item">
             <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Paul-Hi/Mango">
@@ -154,14 +192,14 @@
             </a>
         </li>
     </ul>-->
-    <div class="text-center1 ms-auto" id="bd-theme">
+    <div class="text-center" id="bd-theme">
         © 2023 Copyright: Paul Himmler
         <br>
         Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
         Hosted at <a href="https://pages.github.com">Github</a>.
     </div>
 
-    <div class="btn-group me-3 ms-auto" id="bd-theme">
+    <div class="btn-group me-3" id="bd-theme">
         <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
         <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
                 class="fa-regular fa-lightbulb"></i></label>

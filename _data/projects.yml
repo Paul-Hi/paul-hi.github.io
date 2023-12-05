@@ -4,19 +4,27 @@ project-list:
     title: "Transmittance-based Visibility and Viewpoint Optimization"
     type: Research
     icon: <i class="fa-solid fa-building-columns"></i>
+    data: <p class="fw-bold">EuroVis 2024 (Under Review)</p> <p>A long-standing challenge in volume visualization is the effective communication of relevant spatial structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples along view rays or by optimizing the extinction through an energy minimization. The contribution of an individual sample to the final pixel color is determined by the so-called transmittance, which, however, has previously not been part of the objective function. In this paper, we propose to measure the visibility of relevant structures directly by incorporating the transmittance into a non-linear energy minimization. For the first time, we not only perform a transmittance-based visibility optimization, we concurrently optimize the camera position to find ideal viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives a direct visibility measure that is communicated to the user in order to make aware of potentially overlooked relevant structures. Our approach is compatible with any measure of importance and its versatility is demonstrated in multiple data sets. </p>
+          <a href=""> [Project Page] </a> <br> <a href=""> [arXiv] </a> <br> <a href=""> [Code] </a>
+
   - image: assets/images/rayceBG.png
     title: "Rayce: Hardware Accelerated Pathtracing with Vulkan"
     type: Leisure Research
     icon: <i class="fa-regular fa-face-smile-beam"></i>
+    data: <a href="https://github.com/Paul-Hi/Rayce"> [Code] </a>
   - image: assets/images/mastersBG.png
     title: "Electromagnetic Wave Transport with Maxwell's Equations"
     type: Research
     icon: <i class="fa-solid fa-building-columns"></i>
+    data: <p class="fw-bold">Master's Thesis (graded 1.0)</p> <p> Understanding and simulating the general behavior of electromagnetic waves in arbitrary environments is a challenging problem, not only in mathematical or physical terms, but also in algorithmic terms. Mathematical formulations based on physical observations, such as Maxwell’s equations, do exist, but their calculation is a complex and difficult undertaking. At the same time, an understanding of these processes is of paramount importance because the sheer size of the electromagnetic spectrum means that the applications are also diverse. From X-rays in medicine, to visible light in visualization, to radar waves, such as those used in the automotive industry, to name just a few direct fields of application. In addition, many other scenarios such as quantum mechanics or audio wave simulation could benefit from a general algorithmic description for electromagnetic wave behavior. Particularly, wave properties such as diffraction and interference are of high interest. Thus, to gain important insights, a computer simulation of the real world behavior of electromagnetic waves would be of great benefit. By its very nature, it is not easy to build such a simulation since it requires solving a second-order linear partial differential equation, the wave equation. Moreover, many of the defining properties occur only at relatively small scales, which poses numerical problems. There are strategies such as the Finite-Difference Time-Domain Method or the Method of Moments. However, they suffer from limitations regarding domain size or overall accuracy. We present a method based on Monte Carlo integration that attempts to overcome any discretization constraints, showcasing a different approach to the problem. In this thesis, a brief overview of the physical and mathematical basics is given at the beginning. In addition, related work and alternative approaches are discussed. Then, we proceed with the development of the Monte Carlo Waves method to simulate electromagnetic waves. Our method solves the inhomogeneous Helmholtz equation in several subdomains. For this, we must find valid boundary conditions to achieve physically plausible results. After explaining the principle algorithm, an analysis of the results is presented. In order to consolidate the presented approach, it is compared to existing methods. At the end, an outlook is given and possible further developments are discussed. </p>
+
   - image: assets/images/safBG.png
     title: "SAF: Simple Application Framework"
     type: Leisure Research
     icon: <i class="fa-solid fa-building-columns"></i> <i class="fa-regular fa-face-smile-beam"></i>
+    data: <a href="https://github.com/Paul-Hi/SAF"> [Code] </a>
   - image: assets/images/mangoBG.png
     title: "Mango: Graphics Playground/Engine"
     type: Leisure Research
     icon: <i class="fa-regular fa-face-smile-beam"></i>
+    data: <a href="https://github.com/Paul-Hi/Rayce"> [Code] </a>
