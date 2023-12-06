@@ -2,9 +2,5 @@
 pages:
   - title: <i class="fa-regular fa-square no-hover"></i> Home
     url: /index.html
-  - title: <i class="fa-regular fa-circle no-hover"></i> Projects
-    url: /projects.html
-  - title: <i class="fa-solid fa-info no-hover"></i> About
-    url: /about.html
   - title: <i class="fa-solid fa-pen no-hover"></i> Blog
     url: /blog.html

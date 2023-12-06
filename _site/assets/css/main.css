@@ -9321,6 +9321,10 @@ body {
   background-size: cover;
 }
 
+.fullscreen-hero {
+  height: 100vh;
+}
+
 .fade-in {
   opacity: 0;
   -webkit-transition: opacity 1s ease-in;
@@ -9437,6 +9441,27 @@ body.modal-open .container > *:not(.modal) {
   color: var(--bs-secondary-text-emphasis);
 }
 .social-list li a :active {
+  color: var(--bs-primary-text-emphasis);
+}
+
+.scroll-button {
+  font-size: xx-large;
+}
+.scroll-button i {
+  color: var(--bs-body-color);
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.scroll-button :hover {
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  transform: scale(1.25);
+  color: var(--bs-secondary-text-emphasis);
+}
+.scroll-button :active {
   color: var(--bs-primary-text-emphasis);
 }
 

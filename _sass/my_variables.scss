@@ -85,6 +85,9 @@ body {
     background-size: cover;
 }
 
+.fullscreen-hero {
+    height: 100vh;
+}
 
 .fade-in {
     opacity: 0;
@@ -214,6 +217,30 @@ body.modal-open .container>*:not(.modal) {
         :active {
             color: var(--bs-primary-text-emphasis);
         }
+    }
+}
+
+.scroll-button {
+    font-size: xx-large;
+
+    i {
+        color: var(--bs-body-color);
+        -webkit-transition: all .25s;
+        -moz-transition: all .25s;
+        -o-transition: all .25s;
+        transition: all .25s;
+    }
+
+    :hover {
+        -webkit-transform: scale(1.25);
+        -moz-transform: scale(1.25);
+        -o-transform: scale(1.25);
+        transform: scale(1.25);
+        color: var(--bs-secondary-text-emphasis);
+    }
+
+    :active {
+        color: var(--bs-primary-text-emphasis);
     }
 }
 

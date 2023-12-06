@@ -10,11 +10,21 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
     <!-- font-awesome -->
     <script src="https://kit.fontawesome.com/23ba5102c7.js" crossorigin="anonymous"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        type="text/javascript"></script>
     <!-- mine -->
     <link rel="stylesheet" type="text/css" href="http://localhost:4000/%20./assets/css/main.css">
     <script src="/%20/assets/js/theme_toggle.js"></script>
@@ -48,18 +58,6 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link " href="/projects.html">
-                            <span><i class="fa-regular fa-circle no-hover"></i> Projects</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link " href="/about.html">
-                            <span><i class="fa-solid fa-info no-hover"></i> About</span>
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
                         <a class="nav-link " href="/blog.html">
                             <span><i class="fa-solid fa-pen no-hover"></i> Blog</span>
                         </a>
@@ -72,8 +70,8 @@
 </header>
 
     <div class="content-container">
-        <div class="container col-xxl-8 px-4 py-5 fade-in">
-    <div class="row flex-lg-row align-items-center g-5 py-5">
+        <div class="container fullscreen-hero px-4 py-5 fade-in">
+    <div class="row flex-lg-row align-items-center g-5 py-5 h-75">
         <div class="col-10 col-sm-8 col-lg-6">
             <div class="d-flex">
                 <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
@@ -90,22 +88,45 @@
         </div>
         <div class=" col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
-            <p class="lead">I am a PhD candidate at the <a  href="https://vc.tf.fau.de/">Professorship for Visual Computing</a> at FAU Erlangen-Nürnberg,
+            <p class="lead">I am a PhD candidate at the <a href="https://vc.tf.fau.de/">Professorship for Visual
+                    Computing</a> at FAU Erlangen-Nürnberg,
                 supervised by Prof. Dr.-Ing. Tobias Günther.</p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="project-scroll scroll-button">
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
     </div>
 </div>
 
-<div class="container px-4 py-5  fade-in" id="first-project-cards">
-    <h2 class="pb-3 display-6 border-bottom">Projects</h2>
+<!-- TODO Next: About, Font, Move Theme Toggle Up and redesign navbar, Fix Scroll Arrow Mobile, More AOS-->
+
+<div class="container px-4 py-5 fade-in" id="about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom"> About </h2>
+    <div class="row flex-lg-row align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <div class="d-flex">
+                TODO
+            </div>
+        </div>
+        <div class=" col-lg-6">
+            TODO
+        </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5 fade-in" id="project-cards" data-aos="fade-bottom" data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom"> Projects </h2>
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         
         <div class="col  project-showcase-col">
-            <div class="card overflow-hidden rounded-4 project-showcase" data-bs-toggle="modal"
-                href="#modal1">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
+                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal1"
+                data-bs-toggle="modal" href="#modal1">
                 <img class="card-img card-cover" src="assets/images/paperBG.png" alt=" Project image">
-                <div class="d-flex card-img-overlay flex-column p-5 pb-3 text-white text-shadow-1">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Transmittance-based Visibility and Viewpoint Optimization</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -120,11 +141,69 @@
         </div>
         
         <div class="col  project-showcase-col">
-            <div class="card overflow-hidden rounded-4 project-showcase" data-bs-toggle="modal"
-                href="#modal2">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
+                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal2"
+                data-bs-toggle="modal" href="#modal2">
                 <img class="card-img card-cover" src="assets/images/rayceBG.png" alt=" Project image">
-                <div class="d-flex card-img-overlay flex-column p-5 pb-3 text-white text-shadow-1">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Rayce: Hardware Accelerated Pathtracing with Vulkan</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-regular fa-face-smile-beam"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Leisure Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
+                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal3"
+                data-bs-toggle="modal" href="#modal3">
+                <img class="card-img card-cover" src="assets/images/mastersBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Electromagnetic Wave Transport with Maxwell's Equations</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
+                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal4"
+                data-bs-toggle="modal" href="#modal4">
+                <img class="card-img card-cover" src="assets/images/safBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">SAF: Simple Application Framework</h3>
+                    <ul class="d-flex list-unstyled mt-auto no-hover">
+                        <li class="me-auto">
+                            <i class="fa-solid fa-building-columns"></i> <i class="fa-regular fa-face-smile-beam"></i>
+                        </li>
+                        <li class="d-flex align-items-center me-3">
+                            <small>Leisure Research</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col  project-showcase-col">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
+                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal5"
+                data-bs-toggle="modal" href="#modal5">
+                <img class="card-img card-cover" src="assets/images/mangoBG.png" alt=" Project image">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">Mango: Graphics Playground/Engine</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
                             <i class="fa-regular fa-face-smile-beam"></i>
@@ -149,7 +228,14 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <p class="fw-bold">EuroVis 2024 (Under Review)</p> <p>A long-standing challenge in volume visualization is the effective communication of relevant spatial structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples along view rays or by optimizing the extinction through an energy minimization. The contribution of an individual sample to the final pixel color is determined by the so-called transmittance, which, however, has previously not been part of the objective function. In this paper, we propose to measure the visibility of relevant structures directly by incorporating the transmittance into a non-linear energy minimization. For the first time, we not only perform a transmittance-based visibility optimization, we concurrently optimize the camera position to find ideal viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives a direct visibility measure that is communicated to the user in order to make aware of potentially overlooked relevant structures. Our approach is compatible with any measure of importance and its versatility is demonstrated in multiple data sets. </p> <a href=""> [Project Page] </a> <br> <a href=""> [arXiv] </a> <br> <a href=""> [Code] </a>
+                    <h4 id="eurovis-2024-under-review"><strong>EuroVis 2024 (Under Review)</strong></h4>
+
+<p>A long-standing challenge in volume visualization is the effective communication of relevant spatial structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples along view rays or by optimizing the extinction through an energy minimization. The contribution of an individual sample to the final pixel color is determined by the so-called transmittance, which, however, has previously not been part of the objective function. In this paper, we propose to measure the visibility of relevant structures directly by incorporating the transmittance into a non-linear energy minimization. For the first time, we not only perform a transmittance-based visibility optimization, we concurrently optimize the camera position to find ideal viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives a direct visibility measure that is communicated to the user in order to make aware of potentially overlooked relevant structures. Our approach is compatible with any measure of importance and its versatility is demonstrated in multiple data sets.</p>
+
+<p><a href="''">Project Page</a><br />
+<a href="''">arXiv</a><br />
+<a href="''">Code</a></p>
+
                 </div>
             </div>
         </div>
@@ -165,23 +251,81 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <a href="https://github.com/Paul-Hi/Rayce"> [Code] </a>
+                    <p><a href="https://github.com/Paul-Hi/Rayce">Code</a></p>
+
                 </div>
             </div>
         </div>
     </div>
     
+    <div class="modal fade" id="modal3" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Electromagnetic Wave Transport with Maxwell's Equations</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <h4 id="masters-thesis-graded-10"><strong>Master’s Thesis (graded 1.0)</strong></h4>
 
-    <!-------------------------------------->
+<p>Understanding and simulating the general behavior of electromagnetic waves in arbitrary environments is a challenging problem, not only in mathematical or physical terms, but also in algorithmic terms. Mathematical formulations based on physical observations, such as Maxwell’s equations, do exist, but their calculation is a complex and difficult undertaking. At the same time, an understanding of these processes is of paramount importance because the sheer size of the electromagnetic spectrum means that the applications are also diverse. From X-rays in medicine, to visible light in visualization, to radar waves, such as those used in the automotive industry, to name just a few direct fields of application. In addition, many other scenarios such as quantum mechanics or audio wave simulation could benefit from a general algorithmic description for electromagnetic wave behavior. Particularly, wave properties such as diffraction and interference are of high interest. Thus, to gain important insights, a computer simulation of the real world behavior of electromagnetic waves would be of great benefit. By its very nature, it is not easy to build such a simulation since it requires solving a second-order linear partial differential equation, the wave equation. Moreover, many of the defining properties occur only at relatively small scales, which poses numerical problems. There are strategies such as the Finite-Difference Time-Domain Method or the Method of Moments. However, they suffer from limitations regarding domain size or overall accuracy. We present a method based on Monte Carlo integration that attempts to overcome any discretization constraints, showcasing a different approach to the problem. In this thesis, a brief overview of the physical and mathematical basics is given at the beginning. In addition, related work and alternative approaches are discussed. Then, we proceed with the development of the Monte Carlo Waves method to simulate electromagnetic waves. Our method solves the inhomogeneous Helmholtz equation in several subdomains. For this, we must find valid boundary conditions to achieve physically plausible results. After explaining the principle algorithm, an analysis of the results is presented. In order to consolidate the presented approach, it is compared to existing methods. At the end, an outlook is given and possible further developments are discussed.</p>
 
-    <div class="d-flex">
-        <div class="nav-item mx-auto">
-            <a class="nav-link border rounded-2" href="/projects.html">
-                <h3 class="no-hover px-2 display-6">More</h3>
-            </a>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <div class="modal fade" id="modal4" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">SAF: Simple Application Framework</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p><a href="https://github.com/Paul-Hi/SAF">Code</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modal5" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title display-6">Mango: Graphics Playground/Engine</h3>
+                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p><a href="https://github.com/Paul-Hi/Mango">Code</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
+
+<script>
+    AOS.init({
+        duration: 1000
+    });
+</script>
+
+<script>
+    $('.project-scroll').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $("#about").offset().top
+        }, 1000);
+    });
+</script>
     </div>
 
     <footer class="d-flex justify-content-around align-items-center mt-auto py-3 bg-body-tertiary">

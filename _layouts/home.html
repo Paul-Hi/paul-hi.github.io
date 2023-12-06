@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="container col-xxl-8 px-4 py-5 fade-in">
-    <div class="row flex-lg-row align-items-center g-5 py-5">
+<div class="container fullscreen-hero px-4 py-5 fade-in">
+    <div class="row flex-lg-row align-items-center g-5 py-5 h-75">
         <div class="col-10 col-sm-8 col-lg-6">
             <div class="d-flex">
                 <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
@@ -20,22 +20,45 @@ layout: default
         </div>
         <div class=" col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
-            <p class="lead">I am a PhD candidate at the <a  href="https://vc.tf.fau.de/">Professorship for Visual Computing</a> at FAU Erlangen-Nürnberg,
+            <p class="lead">I am a PhD candidate at the <a href="https://vc.tf.fau.de/">Professorship for Visual
+                    Computing</a> at FAU Erlangen-Nürnberg,
                 supervised by Prof. Dr.-Ing. Tobias Günther.</p>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="project-scroll scroll-button">
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
     </div>
 </div>
 
-<div class="container px-4 py-5  fade-in" id="first-project-cards">
-    <h2 class="pb-3 display-6 border-bottom">Projects</h2>
+<!-- TODO Next: About, Font, Move Theme Toggle Up and redesign navbar, Fix Scroll Arrow Mobile, More AOS-->
+
+<div class="container px-4 py-5 fade-in" id="about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom"> About </h2>
+    <div class="row flex-lg-row align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <div class="d-flex">
+                TODO
+            </div>
+        </div>
+        <div class=" col-lg-6">
+            TODO
+        </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5 fade-in" id="project-cards" data-aos="fade-bottom" data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom"> Projects </h2>
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
-        {% for proj in site.data.projects.project-list limit:2 %}
+        {% for proj in site.projects %}
         <div class="col  project-showcase-col">
-            <div class="card overflow-hidden rounded-4 project-showcase" data-bs-toggle="modal"
-                href="#modal{{ forloop.index }}">
+            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
+                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal{{ forloop.index }}"
+                data-bs-toggle="modal" href="#modal{{ forloop.index }}">
                 <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image">
-                <div class="d-flex card-img-overlay flex-column p-5 pb-3 text-white text-shadow-1">
+                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
                         <li class="me-auto">
@@ -50,7 +73,7 @@ layout: default
         </div>
         {% endfor %}
     </div>
-    {% for proj in site.data.projects.project-list limit:2 %}
+    {% for proj in site.projects %}
     <div class="modal fade" id="modal{{ forloop.index }}" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
             <div class="modal-content">
@@ -61,20 +84,24 @@ layout: default
                     </div>
                 </div>
                 <div class="modal-body">
-                    {{ proj.data }}
+                    {{ proj.content }}
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
-
-    <!-------------------------------------->
-
-    <div class="d-flex">
-        <div class="nav-item mx-auto">
-            <a class="nav-link border rounded-2" href="/projects.html">
-                <h3 class="no-hover px-2 display-6">More</h3>
-            </a>
-        </div>
-    </div>
 </div>
+
+<script>
+    AOS.init({
+        duration: 1000
+    });
+</script>
+
+<script>
+    $('.project-scroll').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $("#about").offset().top
+        }, 1000);
+    });
+</script>
