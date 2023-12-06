@@ -2,26 +2,26 @@
 layout: default
 ---
 
-<div class="container fullscreen-hero px-4 py-5 fade-in">
-    <div class="row flex-lg-row align-items-center g-5 py-5 h-75">
+<div class="container fullscreen-hero px-4 fade-in">
+    <div class="row flex-lg-row align-items-center g-5 main-hero">
         <div class="col-10 col-sm-8 col-lg-6">
             <div class="d-flex">
-                <img src="assets/images/test_avatar.png" alt="Avatar" width="256" height="256"
-                    class="rounded-circle ms-lg-auto" loading="lazy">
-                <ul class="social-list d-flex flex-column mx-auto ps-3">
+                <img src="assets/images/test_me.png" alt="Me" width="312" height="312"
+                    class="rounded-circle ms-lg-auto my-auto object-fit-contain border border-4 border-primary" loading="lazy">
+                <ul class="social-list d-flex flex-column mx-auto my-auto">
                     <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github"></i></a></li>
                     <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
                                 class="fa-brands fa-linkedin"></i></a></li>
                     <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li> <a href=""><i class="fa-brands fa-google-scholar"></i></i></a></li>
-                    <li> <a href=""><i class="fa-brands fa-researchgate"></i></i></a></li>
+                    <li> <a><i class="fa-brands fa-google-scholar"></i></i></a></li>
+                    <li> <a><i class="fa-brands fa-researchgate"></i></i></a></li>
                 </ul>
             </div>
         </div>
-        <div class=" col-lg-6">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
             <p class="lead">I am a PhD candidate at the <a href="https://vc.tf.fau.de/">Professorship for Visual
-                    Computing</a> at FAU Erlangen-Nürnberg,
+                    Computing</a> at <a href="https://www.fau.eu/">FAU Erlangen-Nürnberg</a>,
                 supervised by Prof. Dr.-Ing. Tobias Günther.</p>
         </div>
     </div>
@@ -32,32 +32,39 @@ layout: default
     </div>
 </div>
 
-<!-- TODO Next: About, Font, Move Theme Toggle Up and redesign navbar, Fix Scroll Arrow Mobile, More AOS-->
-
-<div class="container px-4 py-5 fade-in" id="about" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
-    <h2 class="pb-3 display-6 border-bottom"> About </h2>
-    <div class="row flex-lg-row align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6">
-            <div class="d-flex">
-                TODO
-            </div>
-        </div>
-        <div class=" col-lg-6">
-            TODO
+<div class="container-fluid fade-in bg-secondary-subtle" id="about">
+    <div class="container px-4 py-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+        <h2 class="pb-3 display-6 border-bottom border-secondary"> About </h2>
+        <div class="row flex-lg-row align-items-center g-5 py-5">
+            <p class="lead">
+                I am interested in everything that has to do with visualization and computer graphics ... And most other
+                things
+                too.
+                <br><br>
+                Currently I am a PhD candidate at the
+                <a href="https://vc.tf.fau.de/">Professorship for Visual
+                    Computing</a> at <a href="https://www.fau.eu/">FAU Erlangen-Nürnberg</a>. My research focus is on
+                End-to-End Optimization for
+                Energy-Driven Scientific Visualization.
+                <br><br>
+                I previously studied computer science at <a href="https://www.fau.eu/">FAU Erlangen-Nürnberg</a>. You
+                can find more information about this and more on my <a
+                    href="https://www.linkedin.com/in/paul-himmler-92b092152/">LinkedIn profile</a>.
+            </p>
         </div>
     </div>
 </div>
 
-<div class="container px-4 py-5 fade-in" id="project-cards" data-aos="fade-bottom" data-aos-anchor-placement="top-bottom">
-    <h2 class="pb-3 display-6 border-bottom"> Projects </h2>
+<div class="container px-4 py-5 fade-in" id="project-cards" data-aos="fade-right"
+    data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom border-secondary"> Projects </h2>
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         {% for proj in site.projects %}
         <div class="col  project-showcase-col">
             <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
-                data-aos="fade-up" data-aos-anchor-placement="center-bottom" href="#modal{{ forloop.index }}"
-                data-bs-toggle="modal" href="#modal{{ forloop.index }}">
-                <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image">
+                href="#modal{{ forloop.index }}" data-bs-toggle="modal" href="#modal{{ forloop.index }}">
+                <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image" loading="lazy">
                 <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
                     <ul class="d-flex list-unstyled mt-auto no-hover">
@@ -73,23 +80,28 @@ layout: default
         </div>
         {% endfor %}
     </div>
-    {% for proj in site.projects %}
-    <div class="modal fade" id="modal{{ forloop.index }}" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title display-6">{{ proj.title }}</h3>
-                    <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa-solid fa-xmark"></i>
-                    </div>
+</div>
+{% for proj in site.projects %}
+<div class="modal fade" id="modal{{ forloop.index }}" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header border-secondary">
+                <h3 class="modal-title display-6">{{ proj.title }}</h3>
+                <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
                 </div>
-                <div class="modal-body">
-                    {{ proj.content }}
-                </div>
+            </div>
+            <div class="modal-body">
+                {{ proj }}
             </div>
         </div>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
+<div class="row text-center">
+    <div class="to-start scroll-button">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
 </div>
 
 <script>
@@ -102,6 +114,11 @@ layout: default
     $('.project-scroll').on('click', function (e) {
         $('html, body').animate({
             scrollTop: $("#about").offset().top
+        }, 1000);
+    });
+    $('.to-start').on('click', function (e) {
+        $('html, body').animate({
+            scrollTop: $(window).scrollTop(0)
         }, 1000);
     });
 </script>

@@ -4,9 +4,25 @@
 <head>
     <meta charset="utf-8">
     <title>Blog | Paul Himmler</title>
-    <meta name="description" content="PaulHi">
+    <meta name="description" content="Paul Himmler Portfolio Website">
     <meta name="author" content="Paul Himmler">
+    <meta name="keywords" content="Portfolio, Visualization, Computer Graphics">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- popper -->
@@ -30,20 +46,22 @@
     <script src="/%20/assets/js/theme_toggle.js"></script>
 </head>
 
-<body class="d-flex flex-column"
+<body class="d-flex flex-column overflow-x-hidden"
     onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
     <header role="banner" class="absolute-top">
 
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar sticky-top navbar-expand-lg">
 
         <div class="container-fluid">
             <a class="navbar-brand ms-lg-2">Paul Himmler</a>
 
             <!------------------------------->
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
                 aria-controls="myNavbar" aria-expanded="false" , aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
             </button>
 
             <!------------------------------->
@@ -53,7 +71,7 @@
                     
                     <li class="nav-item">
                         <a class="nav-link " href="/index.html">
-                            <span><i class="fa-regular fa-square no-hover"></i> Home</span>
+                            <span><i class="fa-solid fa-house no-hover"></i> Home</span>
                         </a>
                     </li>
                     
@@ -64,7 +82,24 @@
                     </li>
                     
                 </ul>
+
+                <!------------------------------->
+
+                <div class="btn-group ms-lg-auto me-3 mt-1" id="bd-theme">
+                    <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
+                    <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
+                            class="fa-regular fa-lightbulb"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="dark" autocomplete="off" />
+                    <label class="btn btn-secondary" for="dark" data-bs-theme-value="dark"><i
+                            class="fa-solid fa-moon"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="auto" autocomplete="off" />
+                    <label class="btn btn-secondary" for="auto" data-bs-theme-value="auto"><i
+                            class="fa-solid fa-circle-half-stroke"></i></label>
+                </div>
             </div>
+
         </div>
     </nav>
 </header>
@@ -73,13 +108,23 @@
         <div class="container px-4 py-5 fade-in">
     <h2 class="pb-3 display-6 border-bottom"> Blog </h2>
     <div class="text-center">
-        
+        <p><br />
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+
+<h3 id="under-construction">Under Construction</h3>
+
+<p><i class="fa-solid fa-wrench"></i></p>
+
 
     </div>
 </div>
     </div>
 
-    <footer class="d-flex justify-content-around align-items-center mt-auto py-3 bg-body-tertiary">
+    <footer class="d-flex justify-content-around align-items-center mt-auto py-3">
     <!-- <ul class="list-unstyled list-inline text-center py-3">
         <li class="list-inline-item">
             <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Paul-Hi/Mango">
@@ -92,19 +137,6 @@
         <br>
         Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
         Hosted at <a href="https://pages.github.com">Github</a>.
-    </div>
-
-    <div class="btn-group me-3" id="bd-theme">
-        <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
-        <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
-                class="fa-regular fa-lightbulb"></i></label>
-
-        <input type="radio" class="btn-check" name="theme" id="dark" autocomplete="off" />
-        <label class="btn btn-secondary" for="dark" data-bs-theme-value="dark"><i class="fa-solid fa-moon"></i></label>
-
-        <input type="radio" class="btn-check" name="theme" id="auto" autocomplete="off" />
-        <label class="btn btn-secondary" for="auto" data-bs-theme-value="auto"><i
-                class="fa-solid fa-circle-half-stroke"></i></label>
     </div>
 </footer>
 

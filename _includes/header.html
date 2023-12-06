@@ -1,15 +1,17 @@
 <header role="banner" class="absolute-top">
 
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar sticky-top navbar-expand-lg">
 
         <div class="container-fluid">
             <a class="navbar-brand ms-lg-2">Paul Himmler</a>
 
             <!------------------------------->
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
                 aria-controls="myNavbar" aria-expanded="false" , aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
             </button>
 
             <!------------------------------->
@@ -24,7 +26,24 @@
                     </li>
                     {% endfor %}
                 </ul>
+
+                <!------------------------------->
+
+                <div class="btn-group ms-lg-auto me-3 mt-1" id="bd-theme">
+                    <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
+                    <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
+                            class="fa-regular fa-lightbulb"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="dark" autocomplete="off" />
+                    <label class="btn btn-secondary" for="dark" data-bs-theme-value="dark"><i
+                            class="fa-solid fa-moon"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="auto" autocomplete="off" />
+                    <label class="btn btn-secondary" for="auto" data-bs-theme-value="auto"><i
+                            class="fa-solid fa-circle-half-stroke"></i></label>
+                </div>
             </div>
+
         </div>
     </nav>
 </header>

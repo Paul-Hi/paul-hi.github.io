@@ -1,6 +1,6 @@
 ---
 pages:
-  - title: <i class="fa-regular fa-square no-hover"></i> Home
+  - title: <i class="fa-solid fa-house no-hover"></i> Home
     url: /index.html
   - title: <i class="fa-solid fa-pen no-hover"></i> Blog
     url: /blog.html
