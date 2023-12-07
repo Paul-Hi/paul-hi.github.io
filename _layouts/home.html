@@ -7,7 +7,8 @@ layout: default
         <div class="col-10 col-sm-8 col-lg-6">
             <div class="d-flex">
                 <img src="assets/images/test_me.png" alt="Me" width="312" height="312"
-                    class="rounded-circle ms-lg-auto my-auto object-fit-contain border border-4 border-primary" loading="lazy">
+                    class="rounded-circle ms-lg-auto my-auto object-fit-contain border border-4 border-primary"
+                    loading="lazy">
                 <ul class="social-list d-flex flex-column mx-auto my-auto">
                     <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github"></i></a></li>
                     <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
@@ -61,9 +62,10 @@ layout: default
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         {% for proj in site.projects %}
+        {% assign urlTitle = proj.title | cgi_escape  %}
         <div class="col  project-showcase-col">
-            <div class="card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase" data-bs-toggle="modal"
-                href="#modal{{ forloop.index }}" data-bs-toggle="modal" href="#modal{{ forloop.index }}">
+            <div class="card project-card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase"
+                data-bs-toggle="modal" data-bs-toggle="modal" href="#{{urlTitle }}">
                 <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image" loading="lazy">
                 <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
@@ -82,7 +84,8 @@ layout: default
     </div>
 </div>
 {% for proj in site.projects %}
-<div class="modal fade" id="modal{{ forloop.index }}" aria-hidden="true" tabindex="-1">
+{% assign urlTitle = proj.title | cgi_escape  %}
+<div class="modal fade" id="{{ urlTitle }}" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
         <div class="modal-content">
             <div class="modal-header border-secondary">
@@ -103,22 +106,3 @@ layout: default
         <i class="fa-solid fa-chevron-up"></i>
     </div>
 </div>
-
-<script>
-    AOS.init({
-        duration: 1000
-    });
-</script>
-
-<script>
-    $('.project-scroll').on('click', function (e) {
-        $('html, body').animate({
-            scrollTop: $("#about").offset().top
-        }, 1000);
-    });
-    $('.to-start').on('click', function (e) {
-        $('html, body').animate({
-            scrollTop: $(window).scrollTop(0)
-        }, 1000);
-    });
-</script>

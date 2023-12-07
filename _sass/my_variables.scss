@@ -132,10 +132,10 @@ body {
 
 .project-showcase-col {
     :hover {
-        -webkit-transform: scale(1.05);
-        -moz-transform: scale(1.05);
-        -o-transform: scale(1.05);
-        transform: scale(1.05);
+        -webkit-transform: scale(1.01);
+        -moz-transform: scale(1.01);
+        -o-transform: scale(1.01);
+        transform: scale(1.01);
     }
 }
 
@@ -148,12 +148,13 @@ body {
     max-height: 350px;
 
     .card-img {
-        height: 350px;
+        min-height: 330px;
+        max-height: 350px;
         object-fit: cover;
-        -webkit-filter: blur(2px);
-        -moz-filter: blur(2px);
-        -o-filter: blur(2px);
-        filter: blur(2px);
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        filter: blur(3px);
         -webkit-transition: all .25s;
         -moz-transition: all .25s;
         -o-transition: all .25s;
