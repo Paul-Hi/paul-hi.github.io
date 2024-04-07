@@ -267,6 +267,7 @@ GEM
     unf_ext (0.0.9.1)
     unf_ext (0.0.9.1-x64-mingw32)
     unicode-display_width (1.8.0)
+    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -276,6 +277,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (~> 231)
   jekyll (~> 3.9.5)
+  wdm (>= 0.1.0)
 
 RUBY VERSION
    ruby 2.7.4p191
