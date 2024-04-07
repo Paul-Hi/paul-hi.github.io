@@ -14,8 +14,9 @@ layout: default
                     <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
                                 class="fa-brands fa-linkedin"></i></a></li>
                     <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li> <a><i class="fa-brands fa-google-scholar"></i></i></a></li>
-                    <li> <a><i class="fa-brands fa-researchgate"></i></i></a></li>
+                    <li> <a href="https://orcid.org/0009-0000-3825-045X"><i class="fa-brands fa-orcid"></i></a></li>
+                    <li> <a href="https://www.researchgate.net/profile/Paul-Himmler"><i class="fa-brands fa-researchgate"></i></a></li>
+                    <li> <a><i class="fa-brands fa-google-scholar"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -62,8 +63,8 @@ layout: default
 
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         {% for proj in site.projects %}
-        {% assign urlTitle = proj.title | cgi_escape  %}
-        <div class="col  project-showcase-col">
+        {% assign urlTitle = proj.title | cgi_escape %}
+        <div class="col project-showcase-col">
             <div class="card project-card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase"
                 data-bs-toggle="modal" data-bs-toggle="modal" href="#{{urlTitle }}">
                 <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image" loading="lazy">
@@ -84,7 +85,7 @@ layout: default
     </div>
 </div>
 {% for proj in site.projects %}
-{% assign urlTitle = proj.title | cgi_escape  %}
+{% assign urlTitle = proj.title | cgi_escape %}
 <div class="modal fade" id="{{ urlTitle }}" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
         <div class="modal-content">
