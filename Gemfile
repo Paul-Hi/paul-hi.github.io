@@ -11,3 +11,5 @@ gem "jekyll", "~> 4.3"
 gem "bootstrap", "~> 5.3.2"
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+gem "github-pages", "~> 231", group: :jekyll_plugins

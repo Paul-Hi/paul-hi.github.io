@@ -1,5 +1,6 @@
-url: "paulhi.github.io"
-baseurl: ""
+domain: paulhi.github.io
+url: https://paulhi.github.io
+
 title: "Paul Himmler"
 
 sass:
@@ -11,3 +12,4 @@ sass:
 collections:
   projects:
     output: true
+
