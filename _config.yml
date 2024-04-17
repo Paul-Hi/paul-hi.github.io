@@ -1,6 +1,7 @@
 url: "paulhi.github.io"
 baseurl: ""
 title: "Paul Himmler"
+destination: docs/
 
 sass:
   load_paths:
