@@ -9574,4 +9574,13 @@ p.lead a:active {
   transform: rotate(0deg);
 }
 
+.hero-image-max {
+  max-width: 312px;
+  max-height: 312px;
+  min-width: 156px;
+  min-height: 156px;
+  width: 100%;
+  height: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */
