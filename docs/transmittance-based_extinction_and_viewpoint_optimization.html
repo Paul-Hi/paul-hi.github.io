@@ -160,7 +160,7 @@
 </div>
 
 <div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col">
+    <div class="col text-center">
         <h3 class="text-center">
             Abstract
         </h3>
@@ -179,6 +179,7 @@
             overlooked relevant structures. Our approach is compatible with any measure of importance and its
             versatility is demonstrated in multiple data sets.
         </p>
+        <image src=/assets/images/tbo.png width="100%" class="border border-4 img-responsive mt-4">
     </div>
 </div>
 
@@ -195,14 +196,178 @@
     </div>
 </div>
 
+<script src="/%20/assets/js/interactive_canvas.js"></script>
 <div class="row row-cols-1 g-4 pt-2 pb-5">
     <div class="col">
         <h3 class="text-center">
-            More
+            Interactive
         </h3>
-        <p style="text-align:center;">
-            <image src=/assets/images/tbo.png width="75%" class="border border-4 img-responsive">
-        </p>
+
+        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_earth_mantle"></div>
+        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_vis_male"></div>
+        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_heptane"></div>
+        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_mixer"></div>
+        <script>
+            const data = {
+                0: {
+                    "dataset": "Earth Mantle",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/earthMantleComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/earthMantleComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/earthMantleComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/earthMantleComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/earthMantleComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/earthMantleComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/earthMantleComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/earthMantleComparison/usShaded.png"
+                        }
+                    ]
+                },
+                1: {
+                    "dataset": "Visible Male",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/visMaleComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/visMaleComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/visMaleComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/visMaleComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/visMaleComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/visMaleComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/visMaleComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/visMaleComparison/usShaded.png"
+                        }
+                    ]
+                },
+                2: {
+                    "dataset": "Heptane Flame",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/heptaneComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/heptaneComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/heptaneComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/heptaneComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/heptaneComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/heptaneComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/heptaneComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/heptaneComparison/usShaded.png"
+                        }
+                    ]
+                },
+                3: {
+                    "dataset": "Rotating Mixer",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/mixerComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/mixerComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/mixerComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/mixerComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/mixerComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/mixerComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/mixerComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/mixerComparison/usShaded.png"
+                        }
+                    ]
+                },
+            }
+
+            const parentElement0 = document.getElementById("interactive_canvas_wrapper_earth_mantle");
+            const parentElement1 = document.getElementById("interactive_canvas_wrapper_vis_male");
+            const parentElement2 = document.getElementById("interactive_canvas_wrapper_heptane");
+            const parentElement3 = document.getElementById("interactive_canvas_wrapper_mixer");
+            const interactiveCanvas0 = new InteractiveCanvas(parentElement0, data[0]);
+            const interactiveCanvas1 = new InteractiveCanvas(parentElement1, data[1]);
+            const interactiveCanvas2 = new InteractiveCanvas(parentElement2, data[2]);
+            const interactiveCanvas3 = new InteractiveCanvas(parentElement3, data[3]);
+        </script>
     </div>
 </div>
 
