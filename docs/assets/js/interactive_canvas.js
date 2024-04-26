@@ -54,21 +54,15 @@ class InteractiveCanvas {
         this.data = _data;
 
         var box = document.createElement("div");
-        box.className = "w-100 border border-tertiary text-center d-flex flex-column"
-
-        var dataset = document.createElement("div");
-        dataset.className = "bg-secondary";
-        var t = document.createElement("span");
-        t.innerText = this.data.dataset;
-        t.color = "white";
-        t.style.fontSize = " x-large";
-        dataset.appendChild(t);
+        box.className = "w-100 text-center d-flex flex-column"
 
         this.buttonGroup = document.createElement("div");
         this.buttonGroup.className = "bg-secondary w-100 align-items-center";
 
         this.mainCanvas = document.createElement("canvas");
         this.mainCanvas.className = "border border-tertiary w-100 h-100"
+
+        console.log(this.data.dataset)
 
         this.mainCanvas.width = 1280;
         this.mainCanvas.height = 720;
@@ -113,7 +107,6 @@ class InteractiveCanvas {
             this.addSubCanvas(i);
         }
 
-        box.appendChild(dataset);
         box.appendChild(this.buttonGroup);
         box.appendChild(this.mainCanvas);
         this.parent.appendChild(box);
@@ -121,7 +114,10 @@ class InteractiveCanvas {
 
         this.activeIdx = 0;
         this.buttons[this.activeIdx].classList.add("active")
-        this.images[this.images.length - 1].onload = () => this.draw();
+
+        Promise.all(this.images.filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+            this.draw()
+        });
     }
 
     addSubCanvas(i) {
@@ -141,7 +137,10 @@ class InteractiveCanvas {
 
         var title = document.createElement("div");
         title.className = "bg-secondary"
-        title.appendChild(document.createTextNode(this.data.images[i].title));
+        var t = document.createElement("span");
+        t.className = "interactive-title-text";
+        t.innerText = this.data.images[i].title;
+        title.appendChild(t);
         labeledSubCanvas.appendChild(title);
         labeledSubCanvas.appendChild(subCanvas);
         this.subcanvasWrapper.appendChild(labeledSubCanvas);
@@ -155,7 +154,6 @@ class InteractiveCanvas {
 
         this.mainContext.setTransform(1, 0, 0, 1, 0, 0);
         this.mainContext.clearRect(0, 0, this.mainCanvas.width, this.mainCanvas.height);
-        this.drawCanvasBackground(this.mainContext, this.mainCanvas.width, this.mainCanvas.height, this.mainView.scale);
 
         this.mainView.apply();
 
@@ -174,7 +172,6 @@ class InteractiveCanvas {
                 const ctx = subCanvas.getContext("2d");
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 ctx.clearRect(0, 0, subCanvas.width, subCanvas.height);
-                this.drawCanvasBackground(ctx, subCanvas.width, subCanvas.height, 1.0);
                 ctx.setTransform(1.0, 0, 0, 1.0, subCanvas.width / 2, subCanvas.height / 2);
                 var sx = 100;
                 ctx.drawImage(this.images[i], x - sx, y - sx, sx * 2, sx * 2, -(subCanvas.width) / 2, -(subCanvas.height) / 2, subCanvas.width, subCanvas.height);
@@ -184,29 +181,6 @@ class InteractiveCanvas {
         }
 
         requestAnimationFrame(() => this.draw());
-    }
-
-    drawCanvasBackground(ctx, w, h, scale) {
-        const cellSize = 20;
-        ctx.save();
-        ctx.beginPath();
-        ctx.lineWidth = 1;
-        ctx.globalAlpha = 0.1;
-        ctx.strokeStyle = "#000000";
-
-        for (let x = (this.mainView.position.x % cellSize) * scale; x <= w; x += cellSize * scale) {
-            ctx.moveTo(x, 0);
-            ctx.lineTo(x, h);
-        }
-
-        for (let y = (this.mainView.position.y % cellSize) * scale; y <= h; y += cellSize * scale) {
-            ctx.moveTo(0, y);
-            ctx.lineTo(w, y);
-        }
-
-        ctx.stroke();
-        ctx.closePath();
-        ctx.restore();
     }
 
 

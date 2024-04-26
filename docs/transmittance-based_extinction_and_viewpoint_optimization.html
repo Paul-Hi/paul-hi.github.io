@@ -19,8 +19,8 @@
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!-- font-awesome -->
     <script src="https://kit.fontawesome.com/23ba5102c7.js" crossorigin="anonymous"></script>
@@ -31,9 +31,9 @@
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
         type="text/javascript"></script>
     <!-- mine -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <script src="/assets/js/utils.js"></script>
-    <script src="/assets/js/theme_toggle.js"></script>
+    <link rel="stylesheet" type="text/css" href="/%20/assets/css/main.css">
+    <script src="/%20/assets/js/utils.js"></script>
+    <script src="/%20/assets/js/theme_toggle.js"></script>
 </head>
 
 <body class="d-flex flex-column overflow-x-hidden"
@@ -97,30 +97,30 @@
     <div class="content-container">
         <div class="container px-4 py-5 fade-in" id="project" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
     <div class="row g-4 py-5">
-    <h2 class="col-md-12 text-center">
+    <h1 class="col-md-12 text-center">
         <b>Transmittance-based Extinction and Viewpoint Optimization</b>
         <br>
         <small>
-            EuroVis 2024
+            Computer Graphics Forum (Proc. EuroVis) 2024
         </small>
-    </h2>
+    </h1>
 </div>
 
 <div class="row g-4 pt-2 pb-5">
     <div class="col-md-12 text-center">
         <ul class="list-inline">
             <li class="list-inline-item">
-                <strong><a href="/index.html">
-                        Paul Himmler
-                    </a></strong><sup>1</sup>
+                <h4><strong><a href="/index.html">
+                            Paul Himmler
+                        </a></strong></h4>
             </li>
             <li class="list-inline-item">
-                <strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html">
-                        Tobias Günther
-                    </a></strong><sup>1</sup>
+                <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html">
+                            Tobias Günther
+                        </a></strong></h4>
             </li>
         </ul>
-        <sup>1</sup>Friedrich-Alexander-Universität Erlangen-Nürnberg
+        <h5>Friedrich-Alexander-Universität Erlangen-Nürnberg</h5>
     </div>
 </div>
 
@@ -129,23 +129,25 @@
         <image src=/assets/images/full_paper.png class="pdf-thumbnail img-responsive">
     </a>
 </div>
-<div class="row g-4 py-2">
+
+<div class="row g-4 py-2 mt-1">
     <div class="col md-auto">
         <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
             href="https://vc.tf.fau.de/files/Himmler24EuroVis_additional.pdf">
-            <h5 class="mx-auto mt-1"><i class="fa-regular fa-file-pdf"></i> <strong>Additional</strong></h5></button>
+            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Additional</strong></h5></button>
         </a>
     </div>
     <div class="col md-auto">
         <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
             href="https://vc.tf.fau.de/files/Himmler24EuroVis.mov">
-            <h5 class="mx-auto mt-1"><i class="fa-regular fa-file-video"></i> <strong>Supplementary Video</strong></h5>
+            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Supplementary Video</strong></h5>
             </button>
         </a>
     </div>
     <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center">
-            <h5 class="mx-auto mt-1"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled"
+            aria-disabled="true">
+            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
             </button>
         </a>
     </div>
@@ -153,9 +155,11 @@
 
 <div class="row row-cols-1 g-4 py-2">
     <div class="col text-center">
-        <video id="teaser" width="100%" playsinline autoplay loop muted controls>
-            <source src="" type="video/mp4" />
-        </video>
+        <image src=/assets/images/tbo.png width="100%"
+            class="border border-2 img-responsive my-4">
+            <video id="teaser" width="100%" playsinline autoplay loop muted controls>
+                <source src=/assets/videos/Teaser_w_subtitles.mp4 type="video/mp4" />
+            </video>
     </div>
 </div>
 
@@ -179,7 +183,6 @@
             overlooked relevant structures. Our approach is compatible with any measure of importance and its
             versatility is demonstrated in multiple data sets.
         </p>
-        <image src=/assets/images/tbo.png width="100%" class="border border-4 img-responsive mt-4">
     </div>
 </div>
 
@@ -196,17 +199,26 @@
     </div>
 </div>
 
-<script src="/assets/js/interactive_canvas.js"></script>
+<script src="/%20/assets/js/interactive_canvas.js"></script>
 <div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col">
+    <div class="col text-center">
         <h3 class="text-center">
             Interactive
         </h3>
+        <p style="text-align: justify;" class="pb-4">
+            An interactive comparison of extinction optimization methods on the EARTH MANTLE, VISIBLE HUMAN, HEPTANE
+            FLAME, and ROTATING MIXER data set. Viola et al. <a
+                href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a> and Marchesin et al. <a
+                href="https://doi.org/10.1109/TVCG.2010.30">[MMD10]</a> did not include shadow optimizations and are
+            therefore compared without shadowing. In addition, Ament et al. <a
+                href="https://doi.org/10.1109/TVCG.2016.2569080">[AZD17]</a> with and without shadowing were compared with
+            our method. Previous approaches (<a href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a>,<a
+                href="https://doi.org/10.1109/TVCG.2010.30">[MMD10]</a>) provide limited depth perception. Ament et al.
+            <a href="https://doi.org/10.1109/TVCG.2016.2569080">[AZD17]</a> has global parameters, making it difficult
+            to bring out differently important structures throughout the domain. Some parts might even be lost entirely.
+            In contrast, our method maximizes the visibility successfully everywhere.
+        </p>
 
-        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_earth_mantle"></div>
-        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_vis_male"></div>
-        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_heptane"></div>
-        <div class="w-100 mx-auto py-2" id="interactive_canvas_wrapper_mixer"></div>
         <script>
             const data = {
                 0: {
@@ -358,6 +370,77 @@
                     ]
                 },
             }
+        </script>
+
+        <div class="accordion accordion-flush w-100" id="interactiveAccordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-top rounded-0 border-0 w-100 rotate-icon down d-flex"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseEarthMantle"
+                        aria-expanded="false" aria-controls="collapseEarthMantle">
+                        <h5 class="m-auto"><strong>EARTH MANTLE</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseEarthMantle" class="accordion-collapse collapse show"
+                    data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_earth_mantle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseVisMale" aria-expanded="false"
+                        aria-controls="collapseVisMale">
+                        <h5 class="m-auto"><strong>VISIBLE HUMAN</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseVisMale" class="accordion-collapse collapse" data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_vis_male"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseHeptaneFlame" aria-expanded="false"
+                        aria-controls="collapseHeptaneFlame">
+                        <h5 class="m-auto"><strong>HEPTANE FLAME</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseHeptaneFlame" class="accordion-collapse collapse"
+                    data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_heptane"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseMixer" aria-expanded="false"
+                        aria-controls="collapseMixer">
+                        <h5 class="m-auto"><strong>ROTATING MIXER</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseMixer" class="accordion-collapse collapse" data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_mixer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(".rotate-icon").click(function () {
+                $(this).toggleClass("down");
+            });
 
             const parentElement0 = document.getElementById("interactive_canvas_wrapper_earth_mantle");
             const parentElement1 = document.getElementById("interactive_canvas_wrapper_vis_male");
@@ -454,7 +537,7 @@
         </li>
     </ul>-->
     <div class="text-center">
-        © 2023 Copyright: Paul Himmler
+        © 2024 Copyright: Paul Himmler
         <br>
         Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
         Hosted at <a href="https://pages.github.com">Github</a>.

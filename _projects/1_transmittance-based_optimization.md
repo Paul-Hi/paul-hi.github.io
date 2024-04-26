@@ -7,11 +7,12 @@ image: assets/images/paperBG.png
 ---
 
 <div class="mx-auto">
-Paul Himmler<sup>1</sup>, Tobias Günther<sup>1</sup>
+Paul Himmler, Tobias Günther
 <br>
-<sup>1</sup>Friedrich-Alexander-Universität Erlangen-Nürnberg
+Friedrich-Alexander-Universität Erlangen-Nürnberg
 <br>
-<b>EuroVis 2024</b>
+<b>
+            Computer Graphics Forum (Proc. EuroVis) 2024</b>
 </div>
 
 <div class="btn-group btn-group-sm mx-auto mt-2 mb-5" role="group">
