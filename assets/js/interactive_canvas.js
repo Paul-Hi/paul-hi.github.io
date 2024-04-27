@@ -49,46 +49,51 @@ class CanvasView {
 };
 
 class InteractiveCanvas {
-    constructor(_parent, _data) {
+    constructor(_parent, _data, _maxSubCanvases) {
         this.parent = _parent;
         this.data = _data;
+        this.maxSubCanvases = _maxSubCanvases;
 
         var box = document.createElement("div");
-        box.className = "w-100 text-center d-flex flex-column"
+        box.className = "w-100 mx-auto d-flex flex-column"
 
         this.buttonGroup = document.createElement("div");
-        this.buttonGroup.className = "bg-secondary w-100 align-items-center";
+        this.buttonGroup.className = "bg-secondary w-100 text-center";
 
         this.mainCanvas = document.createElement("canvas");
-        this.mainCanvas.className = "border border-tertiary w-100 h-100"
-
-        console.log(this.data.dataset)
+        this.mainCanvas.className = "border border-tertiary mx-05"
 
         this.mainCanvas.width = 1280;
         this.mainCanvas.height = 720;
         this.mainCanvas.style.background = "#22222244";
 
-        this.mainCanvas.addEventListener("mousemove", (e) => this.onMouseEvent(e), { passive: true });
-        this.mainCanvas.addEventListener("mousedown", (e) => this.onMouseEvent(e), { passive: true });
-        this.mainCanvas.addEventListener("mouseup", (e) => this.onMouseEvent(e), { passive: true });
-        this.mainCanvas.addEventListener("mouseout", (e) => this.onMouseEvent(e), { passive: true });
+        this.mainCanvas.addEventListener("mousemove", (e) => this.onPointerMove(e), { passive: true });
+        this.mainCanvas.addEventListener("mousedown", (e) => this.onPointerDown(e), { passive: true });
+        this.mainCanvas.addEventListener("mouseup", (e) => this.onPointerUp(e), { passive: true });
+        this.mainCanvas.addEventListener("mouseout", (e) => this.onPointerUp(e), { passive: true });
         this.mainCanvas.addEventListener("wheel", (e) => this.onMouseWheelEvent(e), { passive: false });
+
+        this.mainCanvas.addEventListener('touchmove', (e) => this.onTouch(e, (e) => this.onPointerMove(e)), { passive: false });
+        this.mainCanvas.addEventListener('touchstart', (e) => this.onTouch(e, (e) => this.onPointerDown(e)), { passive: false });
+        this.mainCanvas.addEventListener('touchend', (e) => this.onTouch(e, (e) => this.onPointerUp(e)), { passive: false });
+        this.mainCanvas.addEventListener('touchou', (e) => this.onTouch(e, (e) => this.onPointerUp(e)), { passive: false });
 
         this.mainContext = this.mainCanvas.getContext("2d");
         this.mainContext.webkitImageSmoothingEnabled = false;
         this.mainContext.mozImageSmoothingEnabled = false;
         this.mainContext.imageSmoothingEnabled = false;
         this.mainView = new CanvasView({ x: this.mainCanvas.width / 2, y: this.mainCanvas.height / 2 }, this.mainContext)
-        this.mouseContext = { x: 0, y: 0, oldX: 0, oldY: 0, button: false };
+        this.pointerContext = { x: 0, y: 0, dragging: false, oldPinchDistance: null };
 
         this.subcanvases = []
         this.subcanvasWrapper = document.createElement('div');
-        this.subcanvasWrapper.className = "d-flex flex-wrap justify-content-center w-100";
+        this.subcanvasWrapper.className = "d-grid w-100 mb-2";
         this.subcanvasesDirty = true;
 
         // Buttons
         this.buttons = [];
         this.images = [];
+        var subCanvasRow;
         for (let i = 0; i < this.data.images.length; i++) {
             var button = document.createElement('div');
             button.className = "btn btn-secondary border border-2 border-secondary p-2"
@@ -104,7 +109,12 @@ class InteractiveCanvas {
             img.src = this.data.images[i].image;
             this.images.push(img);
 
-            this.addSubCanvas(i);
+            if (i % this.maxSubCanvases == 0) {
+                subCanvasRow = document.createElement("div");
+                subCanvasRow.className = "row w-100 mx-auto justify-content-start";
+                this.subcanvasWrapper.appendChild(subCanvasRow);
+            }
+            this.addSubCanvas(subCanvasRow, i);
         }
 
         box.appendChild(this.buttonGroup);
@@ -120,14 +130,17 @@ class InteractiveCanvas {
         });
     }
 
-    addSubCanvas(i) {
+    addSubCanvas(subCanvasRow, i) {
         var labeledSubCanvas = document.createElement("div");
-        labeledSubCanvas.className = "w-25 border border-tertiary text-center d-flex flex-column mt-1"
+        labeledSubCanvas.className = "text-center col gy-1 gx-1 d-flex flex-column";
+        var width = 1.0 / this.maxSubCanvases * 100.0;
+        labeledSubCanvas.style.width = width + "%";
+        labeledSubCanvas.style.maxWidth = width + "%";
         var subCanvas = document.createElement("canvas");
-        subCanvas.className = "w-100 h-100 border border-tertiary"
+        subCanvas.className = "w-100 h-100 border border-tertiary";
 
-        subCanvas.width = 256;
-        subCanvas.height = 256;
+        subCanvas.width = 128;
+        subCanvas.height = 128;
         subCanvas.style.background = "#22222244";
 
         const ctx = subCanvas.getContext("2d");
@@ -136,14 +149,15 @@ class InteractiveCanvas {
         ctx.imageSmoothingEnabled = false;
 
         var title = document.createElement("div");
-        title.className = "bg-secondary"
+        title.className = "bg-secondary w-100"
         var t = document.createElement("span");
-        t.className = "interactive-title-text";
+        t.className = "interactive-title-text d-inline-block mx-1 pt-1";
+        t.style.maxWidth = "95%";
         t.innerText = this.data.images[i].title;
         title.appendChild(t);
         labeledSubCanvas.appendChild(title);
         labeledSubCanvas.appendChild(subCanvas);
-        this.subcanvasWrapper.appendChild(labeledSubCanvas);
+        subCanvasRow.appendChild(labeledSubCanvas);
         this.subcanvases.push(subCanvas);
     }
 
@@ -166,14 +180,14 @@ class InteractiveCanvas {
         }
         if (this.subcanvasesDirty) {
             var i = 0;
-            var x = (1.0 / this.mainView.scale * (this.mouseContext.x - this.mainView.position.x)) + this.images[i].width / 2;
-            var y = (1.0 / this.mainView.scale * (this.mouseContext.y - this.mainView.position.y)) + this.images[i].height / 2;
+            var x = (1.0 / this.mainView.scale * (this.pointerContext.x - this.mainView.position.x)) + this.images[i].width / 2;
+            var y = (1.0 / this.mainView.scale * (this.pointerContext.y - this.mainView.position.y)) + this.images[i].height / 2;
             for (const subCanvas of this.subcanvases) {
                 const ctx = subCanvas.getContext("2d");
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 ctx.clearRect(0, 0, subCanvas.width, subCanvas.height);
                 ctx.setTransform(1.0, 0, 0, 1.0, subCanvas.width / 2, subCanvas.height / 2);
-                var sx = 100;
+                var sx = 64;
                 ctx.drawImage(this.images[i], x - sx, y - sx, sx * 2, sx * 2, -(subCanvas.width) / 2, -(subCanvas.height) / 2, subCanvas.width, subCanvas.height);
                 i += 1;
             }
@@ -184,44 +198,98 @@ class InteractiveCanvas {
     }
 
 
-    getMousePos(e) {
+    getPointerPos(e) {
+        var x = 0;
+        var y = 0;
+        if (e.touches && e.touches.length == 1) {
+            x = e.touches[0].clientX;
+            y = e.touches[0].clientY;
+        }
+        else if (e.clientX && e.clientY) {
+            x = e.clientX;
+            y = e.clientY;
+        }
+
         var rect = this.mainCanvas.getBoundingClientRect();
         return {
-            x: (e.clientX - rect.left) / (rect.right - rect.left) * this.mainCanvas.width,
-            y: (e.clientY - rect.top) / (rect.bottom - rect.top) * this.mainCanvas.height
+            x: (x - rect.left) / (rect.right - rect.left) * this.mainCanvas.width,
+            y: (y - rect.top) / (rect.bottom - rect.top) * this.mainCanvas.height
         };
     }
 
-    onMouseEvent(e) {
-        if (e.type === "mousedown") {
-            this.mouseContext.button = true
+    onPointerDown(e) {
+        this.pointerContext.dragging = true
+
+        this.pointerContext.x = this.getPointerPos(e).x;
+        this.pointerContext.y = this.getPointerPos(e).y;
+    }
+
+    onPointerUp(e) {
+        this.pointerContext.dragging = false
+        this.pointerContext.oldPinchDistance = null;
+
+        this.pointerContext.x = this.getPointerPos(e).x;
+        this.pointerContext.y = this.getPointerPos(e).y;
+    }
+
+    onPointerMove(e) {
+        if (this.pointerContext.dragging) {
+            this.mainView.pan({ x: this.getPointerPos(e).x - this.pointerContext.x, y: this.getPointerPos(e).y - this.pointerContext.y });
         }
-        if (e.type === "mouseup" || e.type === "mouseout") {
-            this.mouseContext.button = false
+        else {
+            this.subcanvasesDirty = true;
         }
 
-        this.mouseContext.oldX = this.mouseContext.x;
-        this.mouseContext.oldY = this.mouseContext.y;
+        this.pointerContext.x = this.getPointerPos(e).x;
+        this.pointerContext.y = this.getPointerPos(e).y;
 
-        this.mouseContext.x = this.getMousePos(e).x;
-        this.mouseContext.y = this.getMousePos(e).y
-
-        this.subcanvasesDirty = true;
-
-        if (this.mouseContext.button) {
-            this.mainView.pan({ x: this.mouseContext.x - this.mouseContext.oldX, y: this.mouseContext.y - this.mouseContext.oldY });
-        }
     }
 
     onMouseWheelEvent(e) {
-        var x = this.getMousePos(e).x;
-        var y = this.getMousePos(e).y;
+        var x = this.getPointerPos(e).x;
+        var y = this.getPointerPos(e).y;
         if (e.deltaY < 0) {
             this.mainView.scaleAt({ x, y }, ZOOM_SCALE)
         }
         else {
             this.mainView.scaleAt({ x, y }, 1.0 / ZOOM_SCALE)
         }
+        e.preventDefault();
+    }
+
+    onPinch(e) {
+        var touch0 = { x: e.touches[0].clientX, y: e.touches[0].clientY }
+        var touch1 = { x: e.touches[1].clientX, y: e.touches[1].clientY }
+
+        const currentDistance = (touch0.x - touch1.x) ** 2 + (touch0.y - touch1.y) ** 2;
+
+        if (this.pointerContext.oldPinchDistance == null) {
+            this.pointerContext.oldPinchDistance = currentDistance;
+        }
+        else {
+            var rect = this.mainCanvas.getBoundingClientRect();
+            touch0.x = (touch0.x - rect.left) / (rect.right - rect.left) * this.mainCanvas.width;
+            touch0.y = (touch0.y - rect.top) / (rect.bottom - rect.top) * this.mainCanvas.height;
+            touch1.x = (touch1.x - rect.left) / (rect.right - rect.left) * this.mainCanvas.width;
+            touch1.y = (touch1.y - rect.top) / (rect.bottom - rect.top) * this.mainCanvas.height;
+            var x = (touch0.x + 0.5 * (touch1.x - touch0.x));
+            var y = (touch0.y + 0.5 * (touch1.y - touch0.y));
+            this.mainView.scaleAt({ x, y }, currentDistance / this.pointerContext.oldPinchDistance);
+            this.pointerContext.oldPinchDistance = currentDistance;
+            this.pointerContext.x = x;
+            this.pointerContext.y = y;
+        }
+    }
+
+    onTouch(e, singleTouchHandler) {
+        if (e.touches.length == 1) {
+            singleTouchHandler(e);
+        }
+        else if (e.type == "touchmove" && e.touches.length == 2) {
+            this.pointerContext.dragging = false;
+            this.onPinch(e);
+        }
+        this.subcanvasesDirty = true;
         e.preventDefault();
     }
 }
