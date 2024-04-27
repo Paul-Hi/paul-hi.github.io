@@ -1,8 +1,7 @@
-domain: paulhi.github.io
-url: https://paulhi.github.io
-baseurl: /paulhi.github.io
-
+url: "paulhi.github.io"
+baseurl:
 title: "Paul Himmler"
+destination: docs/
 
 sass:
   load_paths:

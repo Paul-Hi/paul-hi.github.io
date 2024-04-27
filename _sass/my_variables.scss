@@ -68,7 +68,13 @@ $font-family-sans-serif: // Inter - because it looks nice
 @import "bootstrap/_navbar"; // Requires nav
 @import "bootstrap/_card";
 // @import "bootstrap/_breadcrumb";
-// @import "bootstrap/_accordion";
+
+$accordion-body-padding-y: 0;
+$accordion-body-padding-x: 0;
+$accordion-bg: var(--bs-primary-bg-subtle);
+
+@import "bootstrap/_accordion";
+
 // @import "bootstrap/_pagination";
 // @import "bootstrap/_badge";
 // @import "bootstrap/_alert";
@@ -383,4 +389,39 @@ p.lead {
 .navbar-toggler.collapsed .bottom-bar {
     margin-top: 16px;
     transform: rotate(0deg);
+}
+
+.hero-image-max {
+    max-width: 312px;
+    max-height: 312px;
+    min-width: 156px;
+    min-height: 156px;
+    width: 100%;
+    height: 100%;
+}
+
+.pdf-thumbnail {
+    width: 99%;
+}
+
+.interactive-title-text {
+    color: var(--bs-white);
+}
+
+.rotate-icon {
+    i {
+        -moz-transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+}
+
+.rotate-icon.down {
+    i {
+        transform-origin: center center;
+        -ms-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
 }
