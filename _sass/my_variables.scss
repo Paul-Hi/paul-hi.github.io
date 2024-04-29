@@ -405,6 +405,9 @@ p.lead {
 }
 
 .interactive-title-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: var(--bs-white);
 }
 
@@ -424,4 +427,9 @@ p.lead {
         -webkit-transform: rotate(-180deg);
         transform: rotate(-180deg);
     }
+}
+
+.mx-05 {
+    margin-left: ($spacer * .125) !important;
+    margin-right: ($spacer * .125) !important;
 }

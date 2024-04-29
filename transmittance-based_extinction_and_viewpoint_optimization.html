@@ -106,9 +106,9 @@ title: Transmittance-based Extinction and Viewpoint Optimization
     </div>
 </div>
 
-<script src="{{ "/assets/js/interactive_canvas.js" | relative_url }}"></script>
+<script src={{ "/assets/js/interactive_canvas.js" | relative_url }}></script>
 <div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col text-center">
+    <div class="col align-items-center">
         <h3 class="text-center">
             Interactive
         </h3>
@@ -354,10 +354,10 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             const parentElement1 = document.getElementById("interactive_canvas_wrapper_vis_male");
             const parentElement2 = document.getElementById("interactive_canvas_wrapper_heptane");
             const parentElement3 = document.getElementById("interactive_canvas_wrapper_mixer");
-            const interactiveCanvas0 = new InteractiveCanvas(parentElement0, data[0]);
-            const interactiveCanvas1 = new InteractiveCanvas(parentElement1, data[1]);
-            const interactiveCanvas2 = new InteractiveCanvas(parentElement2, data[2]);
-            const interactiveCanvas3 = new InteractiveCanvas(parentElement3, data[3]);
+            const interactiveCanvas0 = new InteractiveCanvas(parentElement0, data[0], 6);
+            const interactiveCanvas1 = new InteractiveCanvas(parentElement1, data[1], 6);
+            const interactiveCanvas2 = new InteractiveCanvas(parentElement2, data[2], 6);
+            const interactiveCanvas3 = new InteractiveCanvas(parentElement3, data[3], 6);
         </script>
     </div>
 </div>
