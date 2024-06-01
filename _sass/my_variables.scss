@@ -433,3 +433,9 @@ p.lead {
     margin-left: ($spacer * .125) !important;
     margin-right: ($spacer * .125) !important;
 }
+
+.inlineh5-svg {
+    height: 0.83em;
+    width: auto;
+    vertical-align: super;
+}

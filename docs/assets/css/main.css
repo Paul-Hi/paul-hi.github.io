@@ -8551,3 +8551,8 @@ p.lead a:active {
 .mx-05 {
   margin-left: 0.125rem !important;
   margin-right: 0.125rem !important; }
+
+.inlineh5-svg {
+  height: 0.83em;
+  width: auto;
+  vertical-align: super; }
