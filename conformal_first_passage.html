@@ -1,14 +1,14 @@
 ---
 layout: project
-title: Transmittance-based Extinction and Viewpoint Optimization
+title: Conformal First Passage for Epsilon-free Walk-on-Spheres
 ---
 
 <div class="row g-4 py-5">
     <h1 class="col-md-12 text-center">
-        <b>Transmittance-based Extinction and Viewpoint Optimization</b>
+        <b>Conformal First Passage for Epsilon-free Walk-on-Spheres</b>
         <br>
         <small>
-            Computer Graphics Forum (Proc. EuroVis) 2024
+            ACM Transactions on Graphics (SIGGRAPH), 2025
         </small>
     </h1>
 </div>
@@ -32,23 +32,16 @@ title: Transmittance-based Extinction and Viewpoint Optimization
 </div>
 
 <div class="row g-4 py-2">
-    <a style="text-align:center;" href="https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.pdf">
-        <image src={{ "/assets/images/eurovis24/full_paper.png" | relative_url }} class="pdf-thumbnail img-responsive">
+    <a style="text-align:center;" href="https://vc.tf.fau.de/publications/Himmler25Siggraph/Himmler25Siggraph.pdf">
+        <image src={{ "/assets/images/siggraph25/full_paper.png" | relative_url }} class="pdf-thumbnail img-responsive">
     </a>
 </div>
 
 <div class="row g-4 py-2 mt-1">
     <div class="col md-auto">
         <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis_additional.pdf">
-            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Additional</strong></h5></button>
-        </a>
-    </div>
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.mp4">
-            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Supplementary Video</strong></h5>
-            </button>
+            href="https://github.com/Paul-Hi">
+            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Code</strong></h5></button>
         </a>
     </div>
     <div class="col md-auto">
@@ -60,8 +53,9 @@ title: Transmittance-based Extinction and Viewpoint Optimization
     </div>
     <div class="col md-auto">
         <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://doi.org/10.1111/cgf.15096">
-            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src={{ "/assets/images/open_access.svg" | relative_url }}></img></h5>
+            href="https://doi.org/10.1145/3730942">
+            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src={{ "/assets/images/open_access.svg" |
+                    relative_url }}></img></h5>
             </button>
         </a>
     </div>
@@ -69,11 +63,13 @@ title: Transmittance-based Extinction and Viewpoint Optimization
 
 <div class="row row-cols-1 g-4 py-2">
     <div class="col text-center">
-        <image src={{ "/assets/images/eurovis24/tbo.png" | relative_url }} width="100%"
-            class="border border-2 img-responsive my-4">
+        <image src={{ "/assets/images/siggraph25/teaser.jpg" | relative_url }} width="100%"
+        class="border border-2 img-responsive my-4">
+        <!--
             <video id="teaser" width="100%" playsinline autoplay loop muted controls>
                 <source src={{ "/assets/videos/Teaser_w_subtitles.mp4" | relative_url }} type="video/mp4" />
             </video>
+            -->
     </div>
 </div>
 
@@ -83,23 +79,25 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             Abstract
         </h3>
         <p style="text-align: justify;">
-            A long-standing challenge in volume visualization is the effective communication of relevant spatial
-            structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of
-            every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples
-            along view rays or by optimizing a spatially-varying extinction field through an energy minimization. This
-            energy minimization, however, did not directly measure the contribution of an individual sample to the final
-            pixel color. In this paper, we measure the visibility of relevant structures directly by incorporating the
-            transmittance into a non-linear energy minimization. For the first time, we not only perform a
-            transmittance-based extinction optimization, we concurrently optimize the camera position to find ideal
-            viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes
-            the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives
-            a direct visibility measure that is communicated to the user in order to make aware of potentially
-            overlooked relevant structures. Our approach is compatible with any measure of importance and its
-            versatility is demonstrated in multiple data sets.
+            In recent years, grid-free Monte Carlo methods have gained increasing popularity for solving fundamental
+            partial differential equations. For a given point in the domain, the Walk-on-Spheres method solves a
+            boundary integral equation by integrating recursively over the largest possible sphere. When the walks
+            approach boundaries with Dirichlet conditions, the number of path vertices increases considerably, since the
+            step size becomes smaller with decreasing distance to the boundary. In practice, the walks are terminated
+            once they reach an epsilon-shell around the boundary. This, however, introduces bias, leading to a trade-off
+            between accuracy and performance. Instead of using spheres, we propose to utilize geometric primitives that
+            share more than one point with the boundary to increase the likelihood of immediately terminating. Along the
+            boundary of those new geometric primitives a sampling probability is needed, which corresponds to the exit
+            probability of a Brownian motion. This is known as a first passage problem. Utilizing that Laplace equations
+            are invariant under conformal maps, we transform exit points from unit circles to the exit points of our
+            geometric primitives, for which we describe a suitable placement strategy. With this, we obtain a novel
+            approach to solve the Laplace equation in two dimensions, which does not require an epsilon-shell,
+            significantly reduces the number of path vertices, and reduces inaccuracies near Dirichlet boundaries.
         </p>
     </div>
 </div>
 
+<!--
 <div class="row row-cols-1 g-4 pt-2 pb-5">
     <div class="col">
         <h3 class="text-center">
@@ -141,35 +139,35 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     "images": [
                         {
                             "title": "Volume",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/base.png"
+                            "image": "/assets/images/earthMantleComparison/base.png"
                         },
                         {
                             "title": "Importance",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/importance.png"
+                            "image": "/assets/images/earthMantleComparison/importance.png"
                         },
                         {
                             "title": "Viola",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/viola.png"
+                            "image": "/assets/images/earthMantleComparison/viola.png"
                         },
                         {
                             "title": "Marchesin",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/marchesin.png"
+                            "image": "/assets/images/earthMantleComparison/marchesin.png"
                         },
                         {
                             "title": "Ament",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/ament.png"
+                            "image": "/assets/images/earthMantleComparison/ament.png"
                         },
                         {
                             "title": "Ours",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/us.png"
+                            "image": "/assets/images/earthMantleComparison/us.png"
                         },
                         {
                             "title": "Ament Shaded",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/amentShaded.png"
+                            "image": "/assets/images/earthMantleComparison/amentShaded.png"
                         },
                         {
                             "title": "Ours Shaded",
-                            "image": "/assets/images/eurovis24/earthMantleComparison/usShaded.png"
+                            "image": "/assets/images/earthMantleComparison/usShaded.png"
                         }
                     ]
                 },
@@ -178,35 +176,35 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     "images": [
                         {
                             "title": "Volume",
-                            "image": "/assets/images/eurovis24/visMaleComparison/base.png"
+                            "image": "/assets/images/visMaleComparison/base.png"
                         },
                         {
                             "title": "Importance",
-                            "image": "/assets/images/eurovis24/visMaleComparison/importance.png"
+                            "image": "/assets/images/visMaleComparison/importance.png"
                         },
                         {
                             "title": "Viola",
-                            "image": "/assets/images/eurovis24/visMaleComparison/viola.png"
+                            "image": "/assets/images/visMaleComparison/viola.png"
                         },
                         {
                             "title": "Marchesin",
-                            "image": "/assets/images/eurovis24/visMaleComparison/marchesin.png"
+                            "image": "/assets/images/visMaleComparison/marchesin.png"
                         },
                         {
                             "title": "Ament",
-                            "image": "/assets/images/eurovis24/visMaleComparison/ament.png"
+                            "image": "/assets/images/visMaleComparison/ament.png"
                         },
                         {
                             "title": "Ours",
-                            "image": "/assets/images/eurovis24/visMaleComparison/us.png"
+                            "image": "/assets/images/visMaleComparison/us.png"
                         },
                         {
                             "title": "Ament Shaded",
-                            "image": "/assets/images/eurovis24/visMaleComparison/amentShaded.png"
+                            "image": "/assets/images/visMaleComparison/amentShaded.png"
                         },
                         {
                             "title": "Ours Shaded",
-                            "image": "/assets/images/eurovis24/visMaleComparison/usShaded.png"
+                            "image": "/assets/images/visMaleComparison/usShaded.png"
                         }
                     ]
                 },
@@ -215,35 +213,35 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     "images": [
                         {
                             "title": "Volume",
-                            "image": "/assets/images/eurovis24/heptaneComparison/base.png"
+                            "image": "/assets/images/heptaneComparison/base.png"
                         },
                         {
                             "title": "Importance",
-                            "image": "/assets/images/eurovis24/heptaneComparison/importance.png"
+                            "image": "/assets/images/heptaneComparison/importance.png"
                         },
                         {
                             "title": "Viola",
-                            "image": "/assets/images/eurovis24/heptaneComparison/viola.png"
+                            "image": "/assets/images/heptaneComparison/viola.png"
                         },
                         {
                             "title": "Marchesin",
-                            "image": "/assets/images/eurovis24/heptaneComparison/marchesin.png"
+                            "image": "/assets/images/heptaneComparison/marchesin.png"
                         },
                         {
                             "title": "Ament",
-                            "image": "/assets/images/eurovis24/heptaneComparison/ament.png"
+                            "image": "/assets/images/heptaneComparison/ament.png"
                         },
                         {
                             "title": "Ours",
-                            "image": "/assets/images/eurovis24/heptaneComparison/us.png"
+                            "image": "/assets/images/heptaneComparison/us.png"
                         },
                         {
                             "title": "Ament Shaded",
-                            "image": "/assets/images/eurovis24/heptaneComparison/amentShaded.png"
+                            "image": "/assets/images/heptaneComparison/amentShaded.png"
                         },
                         {
                             "title": "Ours Shaded",
-                            "image": "/assets/images/eurovis24/heptaneComparison/usShaded.png"
+                            "image": "/assets/images/heptaneComparison/usShaded.png"
                         }
                     ]
                 },
@@ -252,35 +250,35 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     "images": [
                         {
                             "title": "Volume",
-                            "image": "/assets/images/eurovis24/mixerComparison/base.png"
+                            "image": "/assets/images/mixerComparison/base.png"
                         },
                         {
                             "title": "Importance",
-                            "image": "/assets/images/eurovis24/mixerComparison/importance.png"
+                            "image": "/assets/images/mixerComparison/importance.png"
                         },
                         {
                             "title": "Viola",
-                            "image": "/assets/images/eurovis24/mixerComparison/viola.png"
+                            "image": "/assets/images/mixerComparison/viola.png"
                         },
                         {
                             "title": "Marchesin",
-                            "image": "/assets/images/eurovis24/mixerComparison/marchesin.png"
+                            "image": "/assets/images/mixerComparison/marchesin.png"
                         },
                         {
                             "title": "Ament",
-                            "image": "/assets/images/eurovis24/mixerComparison/ament.png"
+                            "image": "/assets/images/mixerComparison/ament.png"
                         },
                         {
                             "title": "Ours",
-                            "image": "/assets/images/eurovis24/mixerComparison/us.png"
+                            "image": "/assets/images/mixerComparison/us.png"
                         },
                         {
                             "title": "Ament Shaded",
-                            "image": "/assets/images/eurovis24/mixerComparison/amentShaded.png"
+                            "image": "/assets/images/mixerComparison/amentShaded.png"
                         },
                         {
                             "title": "Ours Shaded",
-                            "image": "/assets/images/eurovis24/mixerComparison/usShaded.png"
+                            "image": "/assets/images/mixerComparison/usShaded.png"
                         }
                     ]
                 },
@@ -368,6 +366,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
         </script>
     </div>
 </div>
+-->
 
 <!--
 <div class="row">
@@ -411,15 +410,16 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             BibTeX
         </h3>
         <pre><code id="bibtex">
-            @article{Himmler24EuroVis,
+            @article{Himmler25Siggraph,
                 author = {Himmler, Paul and G{\"u}nther, Tobias},
-                title = {Transmittance-based Extinction and Viewpoint Optimization},
-                journal = {Computer Graphics Forum (Eurographics Conference on Visualization)},
-                volume = {43},
-                number = {3},
-                year = {2024},
-                publisher = {Eurographics},
-                address = {Odense, Denmark},
+                title = {Conformal First Passage for Epsilon-free Walk-on-Spheres},
+                journal = {ACM Transactions on Graphics (SIGGRAPH)},
+                volume = {44},
+                number = {4},
+                year = {2025},
+                publisher = {ACM},
+                address = {Vancouver, Canada},
+                doi = {10.1145/3730942},
               }
                 </code></pre>
     </div>
@@ -431,11 +431,6 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             Acknowledgements
         </h3>
         <p style="text-align: justify;">
-            We thank G&aacutebor Janiga from the University of Magdeburg for providing the ROTATING MIXER.
-            The EARTH MANTLE was simulated by Anna Gülcher from the NASA Jet Propulsion Laboratory.
-            The VISIBLE HUMAN data set was provided by Peter Ratiu via The National Library of Medicine, Bethesda, MD.
-            The HEPTANE FLAME data set was released by the University of Utah Center for the Simulation of Accidental
-            Fires and Explosions.
             This work was supported by DFG grant no. GU 945/3-1.
         </p>
     </div>

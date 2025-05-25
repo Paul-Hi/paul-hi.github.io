@@ -3,7 +3,7 @@ layout: project-cards
 title: Transmittance-based Extinction and Viewpoint Optimization
 type: Research
 icon: <i class="fa-solid fa-building-columns"></i>
-image: assets/images/paperBG.png
+image: assets/images/eurovis24/paperBG.png
 ---
 
 <div class="mx-auto">
@@ -12,7 +12,7 @@ Paul Himmler, Tobias Günther
 Friedrich-Alexander-Universität Erlangen-Nürnberg
 <br>
 <b>
-            Computer Graphics Forum (Proc. EuroVis) 2024</b>
+Computer Graphics Forum (Proc. EuroVis) 2024</b>
 </div>
 
 <div class="btn-group btn-group-sm mx-auto mt-2 mb-5" role="group">
