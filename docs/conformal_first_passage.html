@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <title>Conformal First Passage for Epsilon-free Walk-on-Spheres | Paul Himmler</title>
+    <meta name="description" content="Paul Himmler Portfolio Website">
+    <meta name="author" content="Paul Himmler">
+    <meta name="keywords" content="Portfolio, Visualization, Computer Graphics">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/23ba5102c7.js" crossorigin="anonymous"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        type="text/javascript"></script>
+    <!-- mine -->
+    <link rel="stylesheet" type="text/css" href=/assets/css/main.css>
+    <script src=/assets/js/utils.js></script>
+    <script src=/assets/js/theme_toggle.js></script>
+</head>
+
+<body class="d-flex flex-column overflow-x-hidden"
+    onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
+    <header role="banner" class="absolute-top">
+
+    <nav class="navbar sticky-top navbar-expand-lg">
+
+        <div class="container-fluid">
+            <a class="navbar-brand ms-lg-2">Paul Himmler</a>
+
+            <!------------------------------->
+
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false" , aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <!------------------------------->
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ms-lg-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="/index.html">
+                            <span><i class="fa-solid fa-house no-hover"></i> Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="/blog.html">
+                            <span><i class="fa-solid fa-pen no-hover"></i> Blog</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <!------------------------------->
+
+                <div class="btn-group ms-lg-auto me-3 mt-1" id="bd-theme">
+                    <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
+                    <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
+                            class="fa-regular fa-lightbulb"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="dark" autocomplete="off" />
+                    <label class="btn btn-secondary" for="dark" data-bs-theme-value="dark"><i
+                            class="fa-solid fa-moon"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="auto" autocomplete="off" />
+                    <label class="btn btn-secondary" for="auto" data-bs-theme-value="auto"><i
+                            class="fa-solid fa-circle-half-stroke"></i></label>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+    <div class="content-container">
+        <div class="container px-4 py-5 fade-in" id="project" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <div class="row g-4 py-5">
+    <h1 class="col-md-12 text-center">
+        <b>Conformal First Passage for Epsilon-free Walk-on-Spheres</b>
+        <br>
+        <small>
+            ACM Transactions on Graphics (SIGGRAPH), 2025
+        </small>
+    </h1>
+</div>
+
+<div class="row g-4 pt-2 pb-5">
+    <div class="col-md-12 text-center">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <h4><strong><a href="/index.html">
+                            Paul Himmler
+                        </a></strong></h4>
+            </li>
+            <li class="list-inline-item">
+                <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html">
+                            Tobias Günther
+                        </a></strong></h4>
+            </li>
+        </ul>
+        <h5>Friedrich-Alexander-Universität Erlangen-Nürnberg</h5>
+    </div>
+</div>
+
+<div class="row g-4 py-2">
+    <a style="text-align:center;" href="https://vc.tf.fau.de/publications/Himmler25Siggraph/Himmler25Siggraph.pdf">
+        <image src=/assets/images/siggraph25/full_paper.png class="pdf-thumbnail img-responsive">
+    </a>
+</div>
+
+<div class="row g-4 py-2 mt-1">
+    <div class="col md-auto">
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
+            href="https://github.com/Paul-Hi">
+            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Code</strong></h5></button>
+        </a>
+    </div>
+    <div class="col md-auto">
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled"
+            aria-disabled="true">
+            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
+            </button>
+        </a>
+    </div>
+    <div class="col md-auto">
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
+            href="https://doi.org/10.1145/3730942">
+            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src=/assets/images/open_access.svg></img></h5>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 py-2">
+    <div class="col text-center">
+        <image src=/assets/images/siggraph25/teaser.jpg width="100%"
+        class="border border-2 img-responsive my-4">
+        <!--
+            <video id="teaser" width="100%" playsinline autoplay loop muted controls>
+                <source src=/assets/videos/Teaser_w_subtitles.mp4 type="video/mp4" />
+            </video>
+            -->
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 pt-2 pb-5">
+    <div class="col text-center">
+        <h3 class="text-center">
+            Abstract
+        </h3>
+        <p style="text-align: justify;">
+            In recent years, grid-free Monte Carlo methods have gained increasing popularity for solving fundamental
+            partial differential equations. For a given point in the domain, the Walk-on-Spheres method solves a
+            boundary integral equation by integrating recursively over the largest possible sphere. When the walks
+            approach boundaries with Dirichlet conditions, the number of path vertices increases considerably, since the
+            step size becomes smaller with decreasing distance to the boundary. In practice, the walks are terminated
+            once they reach an epsilon-shell around the boundary. This, however, introduces bias, leading to a trade-off
+            between accuracy and performance. Instead of using spheres, we propose to utilize geometric primitives that
+            share more than one point with the boundary to increase the likelihood of immediately terminating. Along the
+            boundary of those new geometric primitives a sampling probability is needed, which corresponds to the exit
+            probability of a Brownian motion. This is known as a first passage problem. Utilizing that Laplace equations
+            are invariant under conformal maps, we transform exit points from unit circles to the exit points of our
+            geometric primitives, for which we describe a suitable placement strategy. With this, we obtain a novel
+            approach to solve the Laplace equation in two dimensions, which does not require an epsilon-shell,
+            significantly reduces the number of path vertices, and reduces inaccuracies near Dirichlet boundaries.
+        </p>
+    </div>
+</div>
+
+<!--
+<div class="row row-cols-1 g-4 pt-2 pb-5">
+    <div class="col">
+        <h3 class="text-center">
+            Video
+        </h3>
+        <div class="text-center">
+            <video id="teaser" width="100%" playsinline controls>
+                <source src="" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+</div>
+
+<script src=/assets/js/interactive_canvas.js></script>
+<div class="row row-cols-1 g-4 pt-2 pb-5">
+    <div class="col align-items-center">
+        <h3 class="text-center">
+            Interactive
+        </h3>
+        <p style="text-align: justify;" class="pb-4">
+            An interactive comparison of extinction optimization methods on the EARTH MANTLE, VISIBLE HUMAN, HEPTANE
+            FLAME, and ROTATING MIXER data set. Viola et al. <a
+                href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a> and Marchesin et al. <a
+                href="https://doi.org/10.1109/TVCG.2010.30">[MMD10]</a> did not include shadow optimizations and are
+            therefore compared without shadowing. In addition, Ament et al. <a
+                href="https://doi.org/10.1109/TVCG.2016.2569080">[AZD17]</a> with and without shadowing were compared
+            with
+            our method. Previous approaches (<a href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a>,<a
+                href="https://doi.org/10.1109/TVCG.2010.30">[MMD10]</a>) provide limited depth perception. Ament et al.
+            <a href="https://doi.org/10.1109/TVCG.2016.2569080">[AZD17]</a> has global parameters, making it difficult
+            to bring out differently important structures throughout the domain. Some parts might even be lost entirely.
+            In contrast, our method maximizes the visibility successfully everywhere.
+        </p>
+
+        <script>
+            const data = {
+                0: {
+                    "dataset": "Earth Mantle",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/earthMantleComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/earthMantleComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/earthMantleComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/earthMantleComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/earthMantleComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/earthMantleComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/earthMantleComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/earthMantleComparison/usShaded.png"
+                        }
+                    ]
+                },
+                1: {
+                    "dataset": "Visible Male",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/visMaleComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/visMaleComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/visMaleComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/visMaleComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/visMaleComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/visMaleComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/visMaleComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/visMaleComparison/usShaded.png"
+                        }
+                    ]
+                },
+                2: {
+                    "dataset": "Heptane Flame",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/heptaneComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/heptaneComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/heptaneComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/heptaneComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/heptaneComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/heptaneComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/heptaneComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/heptaneComparison/usShaded.png"
+                        }
+                    ]
+                },
+                3: {
+                    "dataset": "Rotating Mixer",
+                    "images": [
+                        {
+                            "title": "Volume",
+                            "image": "/assets/images/mixerComparison/base.png"
+                        },
+                        {
+                            "title": "Importance",
+                            "image": "/assets/images/mixerComparison/importance.png"
+                        },
+                        {
+                            "title": "Viola",
+                            "image": "/assets/images/mixerComparison/viola.png"
+                        },
+                        {
+                            "title": "Marchesin",
+                            "image": "/assets/images/mixerComparison/marchesin.png"
+                        },
+                        {
+                            "title": "Ament",
+                            "image": "/assets/images/mixerComparison/ament.png"
+                        },
+                        {
+                            "title": "Ours",
+                            "image": "/assets/images/mixerComparison/us.png"
+                        },
+                        {
+                            "title": "Ament Shaded",
+                            "image": "/assets/images/mixerComparison/amentShaded.png"
+                        },
+                        {
+                            "title": "Ours Shaded",
+                            "image": "/assets/images/mixerComparison/usShaded.png"
+                        }
+                    ]
+                },
+            }
+        </script>
+
+        <div class="accordion accordion-flush w-100" id="interactiveAccordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-top rounded-0 border-0 w-100 rotate-icon down d-flex"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseEarthMantle"
+                        aria-expanded="false" aria-controls="collapseEarthMantle">
+                        <h5 class="m-auto"><strong>EARTH MANTLE</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseEarthMantle" class="accordion-collapse collapse show"
+                    data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_earth_mantle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseVisMale" aria-expanded="false"
+                        aria-controls="collapseVisMale">
+                        <h5 class="m-auto"><strong>VISIBLE HUMAN</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseVisMale" class="accordion-collapse collapse" data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_vis_male"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseHeptaneFlame" aria-expanded="false"
+                        aria-controls="collapseHeptaneFlame">
+                        <h5 class="m-auto"><strong>HEPTANE FLAME</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseHeptaneFlame" class="accordion-collapse collapse"
+                    data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_heptane"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseMixer" aria-expanded="false"
+                        aria-controls="collapseMixer">
+                        <h5 class="m-auto"><strong>ROTATING MIXER</i></strong></h5><i
+                            class="fa-solid fa-chevron-down pt-1"></i>
+                    </button>
+                </div>
+                <div id="collapseMixer" class="accordion-collapse collapse" data-bs-parent="#interactiveAccordion">
+                    <div class="accordion-body">
+                        <div class="w-100 mx-auto" id="interactive_canvas_wrapper_mixer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(".rotate-icon").click(function () {
+                $(this).toggleClass("down");
+            });
+
+            const parentElement0 = document.getElementById("interactive_canvas_wrapper_earth_mantle");
+            const parentElement1 = document.getElementById("interactive_canvas_wrapper_vis_male");
+            const parentElement2 = document.getElementById("interactive_canvas_wrapper_heptane");
+            const parentElement3 = document.getElementById("interactive_canvas_wrapper_mixer");
+            const interactiveCanvas0 = new InteractiveCanvas(parentElement0, data[0], 6);
+            const interactiveCanvas1 = new InteractiveCanvas(parentElement1, data[1], 6);
+            const interactiveCanvas2 = new InteractiveCanvas(parentElement2, data[2], 6);
+            const interactiveCanvas3 = new InteractiveCanvas(parentElement3, data[3], 6);
+        </script>
+    </div>
+</div>
+-->
+
+<!--
+<div class="row">
+    <div class="col-md-8">
+        <h3>
+            Details
+        </h3>
+        <p class="text-justify">
+            Paragraph
+        </p>
+        <p style="text-align:center;">
+            <image src="" height="50px" class="img-responsive">
+        </p>
+        <video id="video0" width="100%" autoplay loop muted>
+            <source src="" type="video/mp4" />
+        </video>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>
+            Results
+        </h3>
+        <p class="text-justify">
+            Paragraph
+        </p>
+        <p style="text-align:center;">
+            <image src="" height="50px" class="img-responsive">
+        </p>
+        <video id="video1" width="100%" autoplay loop muted>
+            <source src="" type="video/mp4" />
+        </video>
+    </div>
+</div>
+-->
+
+<div class="row row-cols-1 g-4 py-2">
+    <div class="col">
+        <h3 class="text-center">
+            BibTeX
+        </h3>
+        <pre><code id="bibtex">
+            @article{Himmler25Siggraph,
+                author = {Himmler, Paul and G{\"u}nther, Tobias},
+                title = {Conformal First Passage for Epsilon-free Walk-on-Spheres},
+                journal = {ACM Transactions on Graphics (SIGGRAPH)},
+                volume = {44},
+                number = {4},
+                year = {2025},
+                publisher = {ACM},
+                address = {Vancouver, Canada},
+                doi = {10.1145/3730942},
+              }
+                </code></pre>
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 py-2">
+    <div class="col text-center">
+        <h3>
+            Acknowledgements
+        </h3>
+        <p style="text-align: justify;">
+            This work was supported by DFG grant no. GU 945/3-1.
+        </p>
+    </div>
+</div>
+</div>
+    </div>
+
+    <footer class="d-flex justify-content-around align-items-center mt-auto py-3">
+    <!-- <ul class="list-unstyled list-inline text-center py-3">
+        <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Paul-Hi/Mango">
+                <i class="mango-link fa fa-github fa-2x"></i>
+            </a>
+        </li>
+    </ul>-->
+    <div class="text-center">
+        © 2024 Copyright: Paul Himmler
+        <br>
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
+        Hosted at <a href="https://pages.github.com">Github</a>.
+    </div>
+</footer>
+
+</body>
+
+</html>
