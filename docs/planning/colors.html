@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <title>Colors | Paul Himmler</title>
+    <meta name="description" content="Paul Himmler Portfolio Website">
+    <meta name="author" content="Paul Himmler">
+    <meta name="keywords" content="Portfolio, Visualization, Computer Graphics">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/23ba5102c7.js" crossorigin="anonymous"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        type="text/javascript"></script>
+    <!-- mine -->
+    <link rel="stylesheet" type="text/css" href=/assets/css/main.css>
+    <script src=/assets/js/utils.js></script>
+    <script src=/assets/js/theme_toggle.js></script>
+</head>
+
+<body class="d-flex flex-column overflow-x-hidden"
+    onload="[].forEach.call(document.getElementsByClassName('fade-in'), function(el) { el.style.opacity='1'})">
+    <header role="banner" class="absolute-top">
+
+    <nav class="navbar sticky-top navbar-expand-lg">
+
+        <div class="container-fluid">
+            <a class="navbar-brand ms-lg-2">Paul Himmler</a>
+
+            <!------------------------------->
+
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar"
+                aria-controls="myNavbar" aria-expanded="false" , aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <!------------------------------->
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav ms-lg-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="/index.html">
+                            <span><i class="fa-solid fa-house no-hover"></i> Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="/blog.html">
+                            <span><i class="fa-solid fa-pen no-hover"></i> Blog</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <!------------------------------->
+
+                <div class="btn-group ms-lg-auto me-3 mt-1" id="bd-theme">
+                    <input type="radio" class="btn-check" name="theme" id="light" autocomplete="off" />
+                    <label class="btn btn-secondary" for="light" data-bs-theme-value="light"><i
+                            class="fa-regular fa-lightbulb"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="dark" autocomplete="off" />
+                    <label class="btn btn-secondary" for="dark" data-bs-theme-value="dark"><i
+                            class="fa-solid fa-moon"></i></label>
+
+                    <input type="radio" class="btn-check" name="theme" id="auto" autocomplete="off" />
+                    <label class="btn btn-secondary" for="auto" data-bs-theme-value="auto"><i
+                            class="fa-solid fa-circle-half-stroke"></i></label>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+    <div class="content-container">
+        <h1 id="colors">Colors</h1>
+
+<ul>
+  <li>Primary: #83a2ff</li>
+  <li>Secondary: #39539e</li>
+  <li>Success: #00ad63</li>
+  <li>Info: #ec3965</li>
+  <li>Warning: #e5cd00</li>
+  <li>Danger: #f61700</li>
+  <li>Light: #d1f6fc</li>
+  <li>Dark: #08143a</li>
+</ul>
+
+    </div>
+
+    <footer class="d-flex justify-content-around align-items-center mt-auto py-3">
+    <!-- <ul class="list-unstyled list-inline text-center py-3">
+        <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Paul-Hi/Mango">
+                <i class="mango-link fa fa-github fa-2x"></i>
+            </a>
+        </li>
+    </ul>-->
+    <div class="text-center">
+        © 2024 Copyright: Paul Himmler
+        <br>
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
+        Hosted at <a href="https://pages.github.com">Github</a>.
+    </div>
+</footer>
+
+</body>
+
+</html>
