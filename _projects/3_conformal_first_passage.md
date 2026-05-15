@@ -1,7 +1,7 @@
 ---
 layout: project-cards
 title: Conformal First Passage for Epsilon-free Walk-on-Spheres
-type: Research
+type: Journal Paper SIGGRAPH
 icon: <i class="fa-solid fa-building-columns"></i>
 image: assets/images/siggraph25/paperBG.png
 ---

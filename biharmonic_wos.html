@@ -1,0 +1,129 @@
+---
+layout: project
+title: Monte Carlo Rendering of Biharmonic Diffusion Curves
+---
+
+<div class="row g-4 py-5">
+    <h1 class="col-md-12 text-center">
+        <b>Monte Carlo Rendering of Biharmonic Diffusion Curves</b>
+        <br>
+        <small>
+            ACM Transactions on Graphics (SIGGRAPH), 2026
+        </small>
+    </h1>
+</div>
+
+<div class="row g-4 pt-2 pb-5">
+    <div class="col-md-12 text-center">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <h4><strong><a href="/index.html">
+                            Paul Himmler
+                        </a></strong></h4>
+            </li>
+            <li class="list-inline-item">
+                <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html">
+                            Tobias Günther
+                        </a></strong></h4>
+            </li>
+        </ul>
+        <h5>Friedrich-Alexander-Universität Erlangen-Nürnberg</h5>
+    </div>
+</div>
+
+<div class="row g-4 py-2">
+    <a style="text-align:center;" href="https://vc.tf.fau.de/publications/Himmler26Siggraph/Himmler26Siggraph.pdf">
+        <image src={{ "/assets/images/siggraph26/full_paper.png" | relative_url }} class="pdf-thumbnail img-responsive">
+    </a>
+</div>
+
+<div class="row g-4 py-2 mt-1">
+    <div class="col md-auto">
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
+            href="https://github.com/Paul-Hi/biharmonic-monte-carlo">
+            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Code</strong></h5></button>
+        </a>
+    </div>
+    <div class="col md-auto">
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled"
+            aria-disabled="true">
+            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
+            </button>
+        </a>
+    </div>
+    <div class="col md-auto">
+        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
+            href="https://doi.org/10.1145/3811397">
+            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src={{ "/assets/images/open_access.svg" |
+                    relative_url }}></img></h5>
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 py-2">
+    <div class="col text-center">
+        <image src={{ "/assets/images/siggraph26/teaser.png" | relative_url }} width="100%"
+            class="border border-2 img-responsive my-4">
+            <!--
+            <video id="teaser" width="100%" playsinline autoplay loop muted controls>
+                <source src={{ "/assets/videos/Teaser_w_subtitles.mp4" | relative_url }} type="video/mp4" />
+            </video>
+            -->
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 pt-2 pb-5">
+    <div class="col text-center">
+        <h3 class="text-center">
+            Abstract
+        </h3>
+        <p style="text-align: justify;">
+            Stochastic Monte Carlo solvers for partial differential equations (PDEs) recently gained popularity in
+            computer graphics, finding applications in geometry processing, rendering, simulation, and visualization. At
+            present, there exists no Monte Carlo solver for the rendering of biharmonic diffusion curves, an
+            artist-friendly smooth vector graphics primitive. The fourth-order biharmonic equation of biharmonic
+            diffusion curves can be split into two second-order PDEs, namely a Laplace and a Poisson equation. However,
+            since biharmonic diffusion curves set Dirichlet and inhomogeneous Neumann conditions at the same time, these
+            two second-order PDEs are tightly coupled and can hence not be solved directly. We propose to treat the
+            rendering of biharmonic diffusion curves as an inverse problem, in which the Dirichlet data of the Laplace
+            equation is unknown. We formulate a variational energy optimization, such that the user-defined boundary
+            conditions are met. Thereby, the necessary gradients are estimated stochastically by solving two
+            second-order problems with Dirichlet boundary conditions only.
+        </p>
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 py-2">
+    <div class="col">
+        <h3 class="text-center">
+            BibTeX
+        </h3>
+        <pre><code id="bibtex">
+            @article{Himmler26Siggraph,
+                author = {Himmler, Paul and G{\"u}nther, Tobias},
+                title = {Monte Carlo Rendering of Biharmonic Diffusion Curves},
+                journal = {ACM Transactions on Graphics (SIGGRAPH)},
+                volume = {45},
+                number = {4},
+                pages = {107:1-107:12},
+                year = {2026},
+                publisher = {ACM},
+                address = {Los Angeles, United States},
+                doi = {10.1145/3811397},
+              }
+                </code></pre>
+    </div>
+</div>
+
+<div class="row row-cols-1 g-4 py-2">
+    <div class="col text-center">
+        <h3>
+            Acknowledgements
+        </h3>
+        <p style="text-align: justify;">
+            The Zephyr and Dolphin scene originate from Orzan et al.. The Sunset is from Tian and Günther. This work was
+            supported by DFG grant no. GU 945/3-1.
+        </p>
+    </div>
+</div>

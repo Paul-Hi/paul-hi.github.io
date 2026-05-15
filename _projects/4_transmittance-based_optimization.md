@@ -1,7 +1,7 @@
 ---
 layout: project-cards
 title: Transmittance-based Extinction and Viewpoint Optimization
-type: Research
+type: EuroVis
 icon: <i class="fa-solid fa-building-columns"></i>
 image: assets/images/eurovis24/paperBG.png
 ---
