@@ -51,17 +51,18 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             </button>
         </a>
     </div>
-    <div class="col md-auto">
+    <!-- <div class="col md-auto">
         <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled"
             aria-disabled="true">
             <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
             </button>
         </a>
-    </div>
+    </div> -->
     <div class="col md-auto">
         <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
             href="https://doi.org/10.1111/cgf.15096">
-            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src={{ "/assets/images/open_access.svg" | relative_url }}></img></h5>
+            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src={{ "/assets/images/open_access.svg" |
+                    relative_url }}></img></h5>
             </button>
         </a>
     </div>
@@ -72,7 +73,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
         <image src={{ "/assets/images/eurovis24/tbo.png" | relative_url }} width="100%"
             class="border border-2 img-responsive my-4">
             <video id="teaser" width="100%" playsinline autoplay loop muted controls>
-                <source src={{ "/assets/videos/Teaser_w_subtitles.mp4" | relative_url }} type="video/mp4" />
+                <source src={{ "/assets/videos/eurovis24/Teaser_w_subtitles.mp4" | relative_url }} type="video/mp4" />
             </video>
     </div>
 </div>
@@ -100,7 +101,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
     </div>
 </div>
 
-<div class="row row-cols-1 g-4 pt-2 pb-5">
+<!-- <div class="row row-cols-1 g-4 pt-2 pb-5">
     <div class="col">
         <h3 class="text-center">
             Video
@@ -111,7 +112,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             </video>
         </div>
     </div>
-</div>
+</div> -->
 
 <script src={{ "/assets/js/interactive_canvas.js" | relative_url }}></script>
 <div class="row row-cols-1 g-4 pt-2 pb-5">
@@ -353,7 +354,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
         </div>
 
         <script>
-            document.querySelectorAll('.rotate-icon').forEach(function(el) {
+            document.querySelectorAll('.rotate-icon').forEach(function (el) {
                 el.addEventListener('click', function () {
                     this.classList.toggle('down');
                 });

@@ -96,6 +96,133 @@ title: Conformal First Passage for Epsilon-free Walk-on-Spheres
         </p>
     </div>
 </div>
+<!--
+<script src="https://cdn.jsdelivr.net/npm/p5@1.11.9/lib/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.1/math.js"
+    integrity="sha512-0MC8WeRWoyA1u5N3ssCsJDSbNfw3bjF65BIQ3UTPs9nwaV0fy+JN3FH9PQmYACZOEkQFhUvEP+jIqwOlBjEM9w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src={{ "/assets/js/exit_probability_visualization.js" | relative_url }}></script> -->
+<!--
+<style>
+    kbd {
+        background-color: #eee;
+        border-radius: 3px;
+        border: 1px solid #b4b4b4;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+        color: #333;
+        display: inline-block;
+        font-size: .85em;
+        font-weight: 700;
+        line-height: 1;
+        padding: 2px 4px;
+        white-space: nowrap;
+    }
+
+    .probability-visualization-container {
+        max-width: 100%;
+        margin: 40px 0;
+    }
+
+    .probability-visualization-wrapper {
+        max-width: 100%;
+        height: auto;
+        max-height: 512px;
+        margin: 20px 0;
+    }
+
+    .probability-visualization-wrapper canvas {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        background: #111111;
+        border-radius: 4px;
+        cursor: grab;
+    }
+
+    .probability-visualization-wrapper canvas:active {
+        cursor: grabbing;
+    }
+
+    .probability-reset-button {
+        background-color: #333;
+        border-color: #555;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .probability-reset-button:hover {
+        background-color: #444;
+        border-color: #666;
+    }
+</style> -->
+
+<!-- Offset Circle Probability Visualization -->
+<!-- <div class="row row-cols-1 g-4 pt-2 pb-5 probability-visualization-container">
+    <div class="col text-center">
+        <h3 class="text-center">
+            Offset Circle Exit Probability Visualization
+        </h3>
+        <p style="text-align: justify;">
+            Interactive visualization of Brownian motion exit probabilities from a circle using conformal mapping.
+            Click and drag the point inside the circle to see how exit probabilities change along the boundary.
+            Click the RESET button below to reset the point to the center.
+        </p>
+        <div id="exit-probability-container" class="d-flex flex-column justify-content-center align-items-center"
+            style="position: relative; margin: 20px 0;">
+            <button id="offset-circle-reset-button" class="btn btn-secondary btn-sm mb-3 probability-reset-button"
+                style="z-index: 10;" aria-label="Reset point to center">
+                <i class="fa-solid fa-rotate-right"></i> RESET
+            </button>
+            <div id="offset-circle-exit-probability-canvas-wrapper"></div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Semicircle Probability Visualization -->
+<!-- <div class="row row-cols-1 g-4 pt-2 pb-5 probability-visualization-container">
+    <div class="col text-center">
+        <h3 class="text-center">
+            Semicircle Exit Probability Visualization
+        </h3>
+        <p style="text-align: justify;">
+            Interactive visualization of Brownian motion exit probabilities from a semicircle using conformal mapping.
+            Click and drag the point inside the semicircle to see how exit probabilities change along the arc.
+            Click the RESET button below to reset the point to the center.
+        </p>
+        <div id="semicircle-probability-container" class="d-flex flex-column justify-content-center align-items-center"
+            style="position: relative; margin: 20px 0;">
+            <button id="semicircle-reset-button" class="btn btn-secondary btn-sm mb-3 probability-reset-button"
+                aria-label="Reset semicircle point to center">
+                <i class="fa-solid fa-rotate-right"></i> RESET
+            </button>
+            <div id="semicircle-probability-canvas-wrapper"></div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Cake Probability Visualization -->
+<!-- <div class="row row-cols-1 g-4 pt-2 pb-5 probability-visualization-container">
+    <div class="col text-center">
+        <h3 class="text-center">
+            Cake Exit Probability Visualization
+        </h3>
+        <p style="text-align: justify;">
+            Interactive visualization of Brownian motion exit probabilities from a cake shape (circular sector) using
+            conformal mapping.
+            Click and drag the point inside the cake to see how exit probabilities change along the arc.
+            Click the RESET button below to reset the point to the center.
+        </p>
+        <div id="cake-probability-container" class="d-flex flex-column justify-content-center align-items-center"
+            style="position: relative; margin: 20px 0;">
+            <button id="cake-reset-button" class="btn btn-secondary btn-sm mb-3 probability-reset-button"
+                aria-label="Reset cake point to center">
+                <i class="fa-solid fa-rotate-right"></i> RESET
+            </button>
+            <div id="cake-probability-canvas-wrapper"></div>
+        </div>
+    </div>
+</div> -->
+
 
 <!--
 <div class="row row-cols-1 g-4 pt-2 pb-5">
