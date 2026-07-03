@@ -1,0 +1,19 @@
+# Site build products
+_site/
+vendor/
+.jekyll-cache/
+
+# Bundle products
+.bundler/
+.bundle/
+Gemfile.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo

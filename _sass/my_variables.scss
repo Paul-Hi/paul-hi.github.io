@@ -58,7 +58,6 @@ $font-family-sans-serif: // Inter - because it looks nice
 @import "bootstrap/_images";
 @import "bootstrap/_containers";
 @import "bootstrap/_grid";
-// @import "bootstrap/_tables";
 @import "bootstrap/forms";
 @import "bootstrap/_buttons";
 @import "bootstrap/_transitions";
@@ -67,7 +66,6 @@ $font-family-sans-serif: // Inter - because it looks nice
 @import "bootstrap/_nav";
 @import "bootstrap/_navbar"; // Requires nav
 @import "bootstrap/_card";
-// @import "bootstrap/_breadcrumb";
 
 $accordion-body-padding-y: 0;
 $accordion-body-padding-x: 0;
@@ -75,13 +73,6 @@ $accordion-bg: var(--bs-primary-bg-subtle);
 
 @import "bootstrap/_accordion";
 
-// @import "bootstrap/_pagination";
-// @import "bootstrap/_badge";
-// @import "bootstrap/_alert";
-// @import "bootstrap/_progress";
-// @import "bootstrap/_list-group";
-// @import "bootstrap/_close";
-// @import "bootstrap/_toasts";
 $modal-fade-transform: none;
 
 @import "bootstrap/_modal"; // Requires transitions
@@ -90,17 +81,6 @@ $modal-fade-transform: none;
     --bs-modal-bg: var(--bs-primary-bg-subtle);
 }
 
-// @import "bootstrap/_tooltip";
-// @import "bootstrap/_popover";
-// @import "bootstrap/_carousel";
-// @import "bootstrap/_spinners";
-// @import "bootstrap/_offcanvas"; // Requires transitions
-// @import "bootstrap/_placeholders";
-
-// Helpers
-// @import "bootstrap/helpers";
-
-// Utilities
 @import "bootstrap/utilities/_api";
 
 
@@ -130,25 +110,16 @@ body {
 
 .fade-in {
     opacity: 0;
-    -webkit-transition: opacity 1s ease-in;
-    -moz-transition: opacity 1s ease-in;
-    -o-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
 }
 
 .project-showcase-col {
     :hover {
-        -webkit-transform: scale(1.01);
-        -moz-transform: scale(1.01);
-        -o-transform: scale(1.01);
         transform: scale(1.01);
     }
 }
 
 .project-showcase {
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -o-transition: all .25s;
     transition: all .25s;
     min-height: 350px;
     max-height: 350px;
@@ -157,34 +128,22 @@ body {
         min-height: 350px;
         max-height: 350px;
         object-fit: cover;
-        -webkit-filter: blur(3px);
-        -moz-filter: blur(3px);
-        -o-filter: blur(3px);
         filter: blur(3px);
-        -webkit-transition: all .25s;
-        -moz-transition: all .25s;
-        -o-transition: all .25s;
         transition: all .25s;
     }
 
     .card-img-overlay {
-        background-color: rgba($dark, 0.6);
-        -webkit-transition: all .25s;
-        -moz-transition: all .25s;
-        -o-transition: all .25s;
+        background: linear-gradient(to top, rgba($dark, 0.9) 0%, rgba($dark, 0.6) 50%, transparent 100%);
         transition: all .25s;
     }
 }
 
 .project-showcase:hover>*:not(.card-img-overlay) {
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
     filter: blur(0px);
 }
 
 .card-img-overlay:hover {
-    background-color: rgba($dark, 0.4);
+    background: linear-gradient(to top, rgba($dark, 0.7) 0%, rgba($dark, 0.4) 50%, transparent 100%);
 }
 
 .modal-open {
@@ -192,39 +151,28 @@ body {
 }
 
 body.modal-open .container>*:not(.modal) {
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
     filter: blur(2px);
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -o-transition: all .25s;
     transition: all .25s;
+}
+
+.modal-backdrop {
+    backdrop-filter: blur(2px);
 }
 
 .nav-item {
     padding: 0px 6px;
 
     .nav-link {
-        -webkit-transition: all .25s;
-        -moz-transition: all .25s;
-        -o-transition: all .25s;
         transition: all .25s;
     }
 
     :hover {
-        -webkit-transform: scale(1.025);
-        -moz-transform: scale(1.025);
-        -o-transform: scale(1.025);
         transform: scale(1.025);
     }
 
     @include media-breakpoint-up(lg) {
         :hover {
-            -webkit-transform: scale(1.25);
-            -moz-transform: scale(1.25);
-            -o-transform: scale(1.25);
-            transform: scale(1.25);
+            transform: scale(1.1);
         }
     }
 }
@@ -240,18 +188,11 @@ body.modal-open .container>*:not(.modal) {
     li a {
         i {
             color: var(--bs-body-color);
-            -webkit-transition: all .25s;
-            -moz-transition: all .25s;
-            -o-transition: all .25s;
             transition: all .25s;
         }
 
         :hover {
-            -webkit-transform: scale(1.25);
-            -moz-transform: scale(1.25);
-            -o-transform: scale(1.25);
             transform: scale(1.25);
-            color: var(--bs-secondary-text-emphasis);
         }
 
         :active {
@@ -260,21 +201,22 @@ body.modal-open .container>*:not(.modal) {
     }
 }
 
+.social-list li:nth-child(1) a:hover i { color: #24292e !important; } /* GitHub */
+.social-list li:nth-child(2) a:hover i { color: #0077b5 !important; } /* LinkedIn */
+.social-list li:nth-child(3) a:hover i { color: #000000 !important; } /* X/Twitter */
+.social-list li:nth-child(4) a:hover i { color: #a6ce39 !important; } /* ORCID */
+.social-list li:nth-child(5) a:hover i { color: #00ccbb !important; } /* ResearchGate */
+.social-list li:nth-child(6) a:hover i { color: #4285f4 !important; } /* Google Scholar */
+
 .scroll-button {
     font-size: xx-large;
 
     i {
         color: var(--bs-body-color);
-        -webkit-transition: all .25s;
-        -moz-transition: all .25s;
-        -o-transition: all .25s;
         transition: all .25s;
     }
 
     :hover {
-        -webkit-transform: scale(1.25);
-        -moz-transform: scale(1.25);
-        -o-transform: scale(1.25);
         transform: scale(1.25);
         color: var(--bs-secondary-text-emphasis);
     }
@@ -310,9 +252,6 @@ p.lead {
     width: 30px;
     height: 20px;
     position: relative;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
 }
 
@@ -356,10 +295,6 @@ p.lead {
 
 .navbar-toggler .middle-bar {
     opacity: 0;
-    -webkit-filter: alpha(opacity=0);
-    -moz-filter: alpha(opacity=0);
-    -o-filter: alpha(opacity=0);
-    filter: alpha(opacity=0);
 }
 
 .navbar-toggler .bottom-bar {
@@ -380,10 +315,6 @@ p.lead {
 
 .navbar-toggler.collapsed .middle-bar {
     opacity: 1;
-    -webkit-filter: alpha(opacity=10);
-    -moz-filter: alpha(opacity=10);
-    -o-filter: alpha(opacity=10);
-    filter: alpha(opacity=10);
 }
 
 .navbar-toggler.collapsed .bottom-bar {
@@ -413,8 +344,6 @@ p.lead {
 
 .rotate-icon {
     i {
-        -moz-transition: all 0.25s ease-in-out;
-        -webkit-transition: all 0.25s ease-in-out;
         transition: all 0.25s ease-in-out;
     }
 }
@@ -422,9 +351,6 @@ p.lead {
 .rotate-icon.down {
     i {
         transform-origin: center center;
-        -ms-transform: rotate(-180deg);
-        -moz-transform: rotate(-180deg);
-        -webkit-transform: rotate(-180deg);
         transform: rotate(-180deg);
     }
 }
@@ -438,4 +364,43 @@ p.lead {
     height: 0.83em;
     width: auto;
     vertical-align: super;
+}
+
+/* Academic typography enhancements */
+figure {
+    margin: 2rem 0;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--bs-secondary-color);
+    text-align: center;
+}
+
+pre {
+    background-color: var(--bs-secondary-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: $border-radius;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+code {
+    background-color: var(--bs-secondary-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: $border-radius;
+    font-size: 0.9em;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.math-display {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
 }

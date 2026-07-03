@@ -351,8 +351,10 @@ title: Conformal First Passage for Epsilon-free Walk-on-Spheres
         </div>
 
         <script>
-            $(".rotate-icon").click(function () {
-                $(this).toggleClass("down");
+            document.querySelectorAll('.rotate-icon').forEach(function(el) {
+                el.addEventListener('click', function () {
+                    this.classList.toggle('down');
+                });
             });
 
             const parentElement0 = document.getElementById("interactive_canvas_wrapper_earth_mantle");

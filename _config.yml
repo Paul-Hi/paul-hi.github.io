@@ -1,13 +1,29 @@
-url: "paulhi.github.io"
-baseurl:
+url: "https://paulhi.github.io"
+baseurl: ""
 title: "Paul Himmler"
+email: your-email@example.com
+description: "Paul Himmler Portfolio Website"
+baseurl: ""
 destination: docs/
 
 sass:
-  load_paths:
-    - _sass
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   projects:
     output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
