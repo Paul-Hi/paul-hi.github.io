@@ -17,3 +17,10 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Agent state and tool indexes
+.agent/
+.claude/
+.codegraph/
+.serena/
+.scratch/
