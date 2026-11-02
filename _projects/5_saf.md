@@ -1,9 +1,11 @@
 ---
 layout: project-cards
 title: "SAF: Simple Application Framework"
-type: Leisure Research
-icon: <i class="fa-solid fa-building-columns"></i> <i class="fa-regular fa-face-smile-beam"></i>
-image: assets/images/safBG.png
+image: assets/images/safBG.webp
+category: project
+badge: "Vulkan / C++"
+summary: "Framework for rapid development of applications and prototypes with graphical user interfaces in C++/CUDA/Slang based on Vulkan and ImGui - used in my research projects."
+code_url: "https://github.com/Paul-Hi/SAF"
 ---
 
 <div class="btn-group btn-group-sm mx-auto mt-2 mb-5" role="group">
@@ -15,4 +17,3 @@ image: assets/images/safBG.png
 Simple Application Framework with Vulkan and ImGui
 
 ##### Features
-

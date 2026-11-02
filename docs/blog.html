@@ -8,6 +8,8 @@
     <meta name="author" content="Paul Himmler">
     <meta name="keywords" content="Portfolio, Visualization, Computer Graphics">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -21,22 +23,13 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- mathjax -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        }
-      };
-    </script>
+    
     <!-- mine -->
     <link rel="stylesheet" type="text/css" href=/assets/css/main.css>
     <script src=/assets/js/utils.js></script>
@@ -44,12 +37,12 @@
 </head>
 
 <body class="d-flex flex-column overflow-x-hidden">
-    <header role="banner" class="absolute-top">
+    <header role="banner" class="sticky-top site-header">
 
-    <nav class="navbar sticky-top navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
 
-        <div class="container-fluid">
-            <a class="navbar-brand ms-lg-2">Paul Himmler</a>
+        <div class="container px-4">
+            <a class="navbar-brand fw-bold ms-lg-2" href="/">Paul Himmler</a>
 
             <!------------------------------->
 
@@ -72,8 +65,14 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link active" href="/blog.html">
-                            <span><i class="fa-solid fa-pen no-hover"></i> Blog</span>
+                        <a class="nav-link " href="/index.html#publications">
+                            <span><i class="fa-solid fa-book-open no-hover"></i> Publications</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="/index.html#projects">
+                            <span><i class="fa-solid fa-code no-hover"></i> Projects</span>
                         </a>
                     </li>
                     

@@ -3,5 +3,137 @@ layout: default
 ---
 
 <div class="container px-4 py-5 fade-in" id="project" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <div class="row g-4 py-5">
+        <h1 class="col-md-12 text-center">
+            <b>{{ page.title }}</b>
+            {% if page.venue %}
+            <br>
+            <small>{{ page.venue }}</small>
+            {% endif %}
+        </h1>
+    </div>
+
+    <div class="row g-4 pt-2 pb-5">
+        <div class="col-md-12 text-center">
+            <ul class="list-inline">
+                {% if page.authors %}
+                    {% for author in page.authors %}
+                    <li class="list-inline-item">
+                        <h4><strong><a href="{{ author.url | relative_url }}">{{ author.name }}</a></strong></h4>
+                    </li>
+                    {% endfor %}
+                {% else %}
+                    <li class="list-inline-item">
+                        <h4><strong><a href="{{ '/' | relative_url }}">Paul Himmler</a></strong></h4>
+                    </li>
+                    <li class="list-inline-item">
+                        <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html" target="_blank" rel="noopener">Tobias Günther</a></strong></h4>
+                    </li>
+                {% endif %}
+            </ul>
+            <h5>{{ page.affiliation | default: "Friedrich-Alexander-Universität Erlangen-Nürnberg" }}</h5>
+        </div>
+    </div>
+
+    {% if page.pdf_url and page.pdf_thumbnail %}
+    <div class="row g-4 py-2">
+        <div class="col text-center">
+            <a href="{{ page.pdf_url }}" target="_blank" rel="noopener">
+                <img src="{{ page.pdf_thumbnail | relative_url }}" class="pdf-thumbnail img-responsive" alt="{{ page.title }} PDF">
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if page.code_url or page.supplementary_url or page.video_url or page.video_disabled or page.doi_url %}
+    <div class="row g-4 py-2 mt-1 justify-content-center">
+        {% if page.code_url %}
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center" href="{{ page.code_url }}" target="_blank" rel="noopener">
+                <h5 class="m-auto"><i class="fa-brands fa-github"></i> <strong>Code</strong></h5>
+            </a>
+        </div>
+        {% endif %}
+        {% if page.supplementary_url %}
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center" href="{{ page.supplementary_url }}" target="_blank" rel="noopener">
+                <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>{{ page.supplementary_label | default: "Supplementary Material" }}</strong></h5>
+            </a>
+        </div>
+        {% endif %}
+        {% if page.video_url %}
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center" href="{{ page.video_url }}" target="_blank" rel="noopener">
+                <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>{{ page.video_label | default: "Presentation Video" }}</strong></h5>
+            </a>
+        </div>
+        {% elsif page.video_disabled %}
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled" aria-disabled="true">
+                <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>{{ page.video_label | default: "Presentation Video" }}</strong></h5>
+            </a>
+        </div>
+        {% endif %}
+        {% if page.doi_url %}
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center" href="{{ page.doi_url }}" target="_blank" rel="noopener">
+                <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src="{{ '/assets/images/open_access.svg' | relative_url }}" alt="Open Access"></h5>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if page.teaser_image or page.teaser_video %}
+    <div class="row row-cols-1 g-4 py-2">
+        <div class="col text-center">
+            {% if page.teaser_image %}
+            <img src="{{ page.teaser_image | relative_url }}" class="border border-2 img-responsive my-4" width="100%" alt="{{ page.title }} Teaser">
+            {% endif %}
+            {% if page.teaser_video %}
+            <video id="teaser" width="100%" playsinline autoplay loop muted controls>
+                <source src="{{ page.teaser_video | relative_url }}" type="video/mp4" />
+            </video>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if page.abstract %}
+    <div class="row row-cols-1 g-4 pt-2 pb-5">
+        <div class="col-12">
+            <h3 class="text-center">Abstract</h3>
+            <p class="mt-3">
+                {{ page.abstract }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
+
     {{ content }}
+
+    {% if page.bibtex %}
+    <div class="row row-cols-1 g-4 py-2">
+        <div class="col-12">
+            <h3 class="text-center">BibTeX</h3>
+            <div class="position-relative">
+                <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2 copy-bibtex-btn" aria-label="Copy BibTeX">
+                    <i class="fa-regular fa-copy"></i> <span class="copy-text">Copy</span>
+                </button>
+                <pre class="m-0"><code id="bibtex">{{ page.bibtex | strip }}</code></pre>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if page.acknowledgements %}
+    <div class="row row-cols-1 g-4 py-2">
+        <div class="col-12">
+            <h3 class="text-center">Acknowledgements</h3>
+            <p class="mt-3">
+                {{ page.acknowledgements }}
+            </p>
+        </div>
+    </div>
+    {% endif %}
 </div>

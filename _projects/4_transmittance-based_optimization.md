@@ -1,9 +1,17 @@
 ---
 layout: project-cards
 title: Transmittance-based Extinction and Viewpoint Optimization
-type: EuroVis
-icon: <i class="fa-solid fa-building-columns"></i>
-image: assets/images/eurovis24/paperBG.png
+image: assets/images/eurovis24/paperBG.webp
+category: publication
+subcategory: journal
+venue: "Computer Graphics Forum (Proc. EuroVis), 2024"
+badge: "EuroVis 2024"
+authors: "Paul Himmler, Tobias Günther"
+summary: "Concurrent transmittance-based extinction and viewpoint optimization via non-linear energy minimization incorporating visibility measures of relevant structures in volumetric data."
+project_url: "transmittance-based_extinction_and_viewpoint_optimization.html"
+pdf_url: "https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.pdf"
+video_url: "https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.mp4"
+doi_url: "https://doi.org/10.1111/cgf.15096"
 ---
 
 <div class="mx-auto">

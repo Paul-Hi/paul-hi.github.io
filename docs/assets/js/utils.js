@@ -27,19 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
         el.style.opacity = '1';
     });
 
-    // scroll arrows
-
-    const projectScrollElements = document.querySelectorAll('.project-scroll');
-    projectScrollElements.forEach(function(el) {
-        el.addEventListener('click', function (e) {
-            const aboutElement = document.getElementById('about');
-            if (aboutElement) {
-                const offsetTop = aboutElement.getBoundingClientRect().top + window.scrollY;
-                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-            }
-        });
-    });
-
     const toStartElements = document.querySelectorAll('.to-start');
     toStartElements.forEach(function(el) {
         el.addEventListener('click', function (e) {
@@ -47,37 +34,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // modal url
-
-    if (window.location.hash) {
-        const projectCardsElement = document.getElementById('project-cards');
-        if (projectCardsElement) {
-            const offsetTop = projectCardsElement.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    // BibTeX copy button with fallback for insecure origins (e.g. 0.0.0.0)
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
         }
-        if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
-            new bootstrap.Modal(window.location.hash, {}).show();
-        }
-    }
-
-    // project card clicks
-    const projectCardElements = document.querySelectorAll('.project-card');
-    projectCardElements.forEach(function(el) {
-        el.addEventListener('click', function () {
-            const href = el.getAttribute('href');
-            if (href) { window.location.hash = href; }
+        return new Promise(function (resolve, reject) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.top = '-9999px';
+            textarea.style.left = '-9999px';
+            textarea.setAttribute('readonly', '');
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                const successful = document.execCommand('copy');
+                document.body.removeChild(textarea);
+                if (successful) {
+                    resolve();
+                } else {
+                    reject(new Error('Copy command failed'));
+                }
+            } catch (err) {
+                document.body.removeChild(textarea);
+                reject(err);
+            }
         });
-    });
-
-    function revertToOriginalURL() {
-        var original = window.location.href.substring(0, window.location.href.indexOf('#'))
-        history.replaceState({}, document.title, original);
     }
-    
-    const modalElements = document.querySelectorAll('.modal');
-    modalElements.forEach(function(el) {
-        el.addEventListener('hidden.bs.modal', function () {
-            revertToOriginalURL();
+
+    const copyBibtexButtons = document.querySelectorAll('.copy-bibtex-btn');
+    copyBibtexButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const container = button.closest('.position-relative');
+            const codeEl = container ? container.querySelector('code') : document.getElementById('bibtex');
+            if (!codeEl) return;
+
+            const textToCopy = (codeEl.textContent || codeEl.innerText || '').trim();
+            copyText(textToCopy).then(function () {
+                const icon = button.querySelector('i');
+                const textSpan = button.querySelector('.copy-text');
+                if (icon) icon.className = 'fa-solid fa-check';
+                if (textSpan) textSpan.textContent = 'Copied!';
+                setTimeout(function () {
+                    if (icon) icon.className = 'fa-regular fa-copy';
+                    if (textSpan) textSpan.textContent = 'Copy';
+                }, 2000);
+            }).catch(function (err) {
+                console.error('Failed to copy BibTeX: ', err);
+            });
         });
     });
 });

@@ -11,6 +11,7 @@ exclude:
   - planning/
   - AGENTS.md
   - CLAUDE.md
+  - assets/images/compress.sh
   - .agent/
   - .claude/
   - .codegraph/
@@ -20,6 +21,11 @@ exclude:
 sass:
   sass_dir: _sass
   style: compressed
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
 
 plugins:
   - jekyll-feed

@@ -1,9 +1,17 @@
 ---
 layout: project-cards
 title: Monte Carlo Rendering of Biharmonic Diffusion Curves
-type: Journal Paper SIGGRAPH
-icon: <i class="fa-solid fa-building-columns"></i>
-image: assets/images/siggraph26/paperBG.png
+image: assets/images/siggraph26/paperBG.webp
+category: publication
+subcategory: journal
+venue: "ACM Transactions on Graphics (SIGGRAPH), 2026"
+badge: "SIGGRAPH 2026"
+authors: "Paul Himmler, Tobias Günther"
+summary: "A grid-free Monte Carlo solver for biharmonic diffusion curves by formulating rendering as a variational optimization problem."
+project_url: "biharmonic_wos.html"
+pdf_url: "https://vc.tf.fau.de/publications/Himmler26Siggraph/Himmler26Siggraph.pdf"
+code_url: "https://github.com/Paul-Hi/biharmonic-monte-carlo"
+doi_url: "https://doi.org/10.1145/3811397"
 ---
 
 <div class="mx-auto">

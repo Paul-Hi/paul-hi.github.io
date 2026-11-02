@@ -1,9 +1,18 @@
 ---
 layout: project-cards
 title: Conformal First Passage for Epsilon-free Walk-on-Spheres
-type: Journal Paper SIGGRAPH
-icon: <i class="fa-solid fa-building-columns"></i>
-image: assets/images/siggraph25/paperBG.png
+image: assets/images/siggraph25/paperBG.webp
+category: publication
+subcategory: journal
+venue: "ACM Transactions on Graphics (SIGGRAPH), 2025"
+badge: "SIGGRAPH 2025"
+authors: "Paul Himmler, Tobias Günther"
+summary: "A novel grid-free approach to solve the Laplace equation in two dimensions using conformal maps to calculate first passage probabilities."
+project_url: "conformal_first_passage.html"
+pdf_url: "https://vc.tf.fau.de/publications/Himmler25Siggraph/Himmler25Siggraph.pdf"
+code_url: "https://github.com/Paul-Hi/ConformalFirstPassage"
+video_url: "https://dl.acm.org/doi/suppl/10.1145/3730942/suppl_file/papers_1475.mp4"
+doi_url: "https://doi.org/10.1145/3730942"
 ---
 
 <div class="mx-auto">

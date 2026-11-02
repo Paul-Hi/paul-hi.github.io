@@ -1,9 +1,16 @@
 ---
 layout: project-cards
 title: Visibility Optimization for Direct and Indirect Volume Rendering using Level Set Propagation
-type: TVCG
-icon: <i class="fa-solid fa-building-columns"></i>
-image: assets/images/tvcg26/paperBG.png
+image: assets/images/tvcg26/paperBG.webp
+category: publication
+subcategory: journal
+venue: "IEEE Transactions on Visualization and Computer Graphics, 2026"
+badge: "TVCG 2026"
+authors: "Paul Himmler, Tobias Günther"
+summary: "Joint visibility optimization in direct and indirect volume rendering by evolving implicit geometry to reveal user-selected structures."
+project_url: "vis_opt_direct_indirect.html"
+pdf_url: "https://vc.tf.fau.de/publications/Himmler26TVCG/Himmler26TVCG.pdf"
+doi_url: "https://doi.org/10.1109/TVCG.2026.3668520"
 ---
 
 <div class="mx-auto">

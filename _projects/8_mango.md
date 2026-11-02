@@ -1,9 +1,11 @@
 ---
 layout: project-cards
 title: "Mango: Graphics Playground/Engine"
-type: Leisure Research
-icon: <i class="fa-regular fa-face-smile-beam"></i>
-image: assets/images/mangoBG.png
+image: assets/images/mangoBG.webp
+category: project
+badge: "Graphics Engine"
+summary: "Compact real-time rendering framework exploring physically based rendering techniques and rendering architecture."
+code_url: "https://github.com/Paul-Hi/Mango"
 ---
 
 <div class="btn-group btn-group-sm mx-auto mt-2 mb-5" role="group">

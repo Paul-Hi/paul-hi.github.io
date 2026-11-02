@@ -8,6 +8,8 @@
     <meta name="author" content="Paul Himmler">
     <meta name="keywords" content="Portfolio, Visualization, Computer Graphics">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -21,22 +23,13 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- mathjax -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']]
-        }
-      };
-    </script>
+    
     <!-- mine -->
     <link rel="stylesheet" type="text/css" href=/assets/css/main.css>
     <script src=/assets/js/utils.js></script>
@@ -44,12 +37,12 @@
 </head>
 
 <body class="d-flex flex-column overflow-x-hidden">
-    <header role="banner" class="absolute-top">
+    <header role="banner" class="sticky-top site-header">
 
-    <nav class="navbar sticky-top navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
 
-        <div class="container-fluid">
-            <a class="navbar-brand ms-lg-2">Paul Himmler</a>
+        <div class="container px-4">
+            <a class="navbar-brand fw-bold ms-lg-2" href="/">Paul Himmler</a>
 
             <!------------------------------->
 
@@ -72,8 +65,14 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link " href="/blog.html">
-                            <span><i class="fa-solid fa-pen no-hover"></i> Blog</span>
+                        <a class="nav-link " href="/index.html#publications">
+                            <span><i class="fa-solid fa-book-open no-hover"></i> Publications</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link " href="/index.html#projects">
+                            <span><i class="fa-solid fa-code no-hover"></i> Projects</span>
                         </a>
                     </li>
                     
@@ -103,129 +102,131 @@
     <div class="content-container">
         <div class="container px-4 py-5 fade-in" id="project" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
     <div class="row g-4 py-5">
-    <h1 class="col-md-12 text-center">
-        <b>Monte Carlo Rendering of Biharmonic Diffusion Curves</b>
-        <br>
-        <small>
-            ACM Transactions on Graphics (SIGGRAPH), 2026
-        </small>
-    </h1>
+        <h1 class="col-md-12 text-center">
+            <b>Monte Carlo Rendering of Biharmonic Diffusion Curves</b>
+            
+            <br>
+            <small>ACM Transactions on Graphics (SIGGRAPH), 2026</small>
+            
+        </h1>
+    </div>
+
+    <div class="row g-4 pt-2 pb-5">
+        <div class="col-md-12 text-center">
+            <ul class="list-inline">
+                
+                    <li class="list-inline-item">
+                        <h4><strong><a href="/">Paul Himmler</a></strong></h4>
+                    </li>
+                    <li class="list-inline-item">
+                        <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html" target="_blank" rel="noopener">Tobias Günther</a></strong></h4>
+                    </li>
+                
+            </ul>
+            <h5>Friedrich-Alexander-Universität Erlangen-Nürnberg</h5>
+        </div>
+    </div>
+
+    
+    <div class="row g-4 py-2">
+        <div class="col text-center">
+            <a href="https://vc.tf.fau.de/publications/Himmler26Siggraph/Himmler26Siggraph.pdf" target="_blank" rel="noopener">
+                <img src="/assets/images/siggraph26/full_paper.png" class="pdf-thumbnail img-responsive" alt="Monte Carlo Rendering of Biharmonic Diffusion Curves PDF">
+            </a>
+        </div>
+    </div>
+    
+
+    
+    <div class="row g-4 py-2 mt-1 justify-content-center">
+        
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center" href="https://github.com/Paul-Hi/biharmonic-monte-carlo" target="_blank" rel="noopener">
+                <h5 class="m-auto"><i class="fa-brands fa-github"></i> <strong>Code</strong></h5>
+            </a>
+        </div>
+        
+        
+        
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled" aria-disabled="true">
+                <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
+            </a>
+        </div>
+        
+        
+        <div class="col-md-auto">
+            <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center" href="https://doi.org/10.1145/3811397" target="_blank" rel="noopener">
+                <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src="/assets/images/open_access.svg" alt="Open Access"></h5>
+            </a>
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="row row-cols-1 g-4 py-2">
+        <div class="col text-center">
+            
+            <img src="/assets/images/siggraph26/teaser.png" class="border border-2 img-responsive my-4" width="100%" alt="Monte Carlo Rendering of Biharmonic Diffusion Curves Teaser">
+            
+            
+        </div>
+    </div>
+    
+
+    
+    <div class="row row-cols-1 g-4 pt-2 pb-5">
+        <div class="col-12">
+            <h3 class="text-center">Abstract</h3>
+            <p class="mt-3">
+                Stochastic Monte Carlo solvers for partial differential equations (PDEs) recently gained popularity in computer graphics, finding applications in geometry processing, rendering, simulation, and visualization. At present, there exists no Monte Carlo solver for the rendering of biharmonic diffusion curves, an artist-friendly smooth vector graphics primitive. The fourth-order biharmonic equation of biharmonic diffusion curves can be split into two second-order PDEs, namely a Laplace and a Poisson equation. However, since biharmonic diffusion curves set Dirichlet and inhomogeneous Neumann conditions at the same time, these two second-order PDEs are tightly coupled and can hence not be solved directly. We propose to treat the rendering of biharmonic diffusion curves as an inverse problem, in which the Dirichlet data of the Laplace equation is unknown. We formulate a variational energy optimization, such that the user-defined boundary conditions are met. Thereby, the necessary gradients are estimated stochastically by solving two second-order problems with Dirichlet boundary conditions only.
+
+            </p>
+        </div>
+    </div>
+    
+
+    
+
+    
+    <div class="row row-cols-1 g-4 py-2">
+        <div class="col-12">
+            <h3 class="text-center">BibTeX</h3>
+            <div class="position-relative">
+                <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2 copy-bibtex-btn" aria-label="Copy BibTeX">
+                    <i class="fa-regular fa-copy"></i> <span class="copy-text">Copy</span>
+                </button>
+                <pre class="m-0"><code id="bibtex">@article{Himmler26Siggraph,
+  author = {Himmler, Paul and G{\"u}nther, Tobias},
+  title = {Monte Carlo Rendering of Biharmonic Diffusion Curves},
+  journal = {ACM Transactions on Graphics (SIGGRAPH)},
+  volume = {45},
+  number = {4},
+  pages = {107:1-107:12},
+  year = {2026},
+  publisher = {ACM},
+  address = {Los Angeles, United States},
+  doi = {10.1145/3811397},
+}</code></pre>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="row row-cols-1 g-4 py-2">
+        <div class="col-12">
+            <h3 class="text-center">Acknowledgements</h3>
+            <p class="mt-3">
+                The Zephyr and Dolphin scene originate from Orzan et al.. The Sunset is from Tian and Günther. This work was supported by DFG grant no. GU 945/3-1.
+
+            </p>
+        </div>
+    </div>
+    
 </div>
 
-<div class="row g-4 pt-2 pb-5">
-    <div class="col-md-12 text-center">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <h4><strong><a href="/index.html">
-                            Paul Himmler
-                        </a></strong></h4>
-            </li>
-            <li class="list-inline-item">
-                <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html">
-                            Tobias Günther
-                        </a></strong></h4>
-            </li>
-        </ul>
-        <h5>Friedrich-Alexander-Universität Erlangen-Nürnberg</h5>
-    </div>
-</div>
-
-<div class="row g-4 py-2">
-    <a style="text-align:center;" href="https://vc.tf.fau.de/publications/Himmler26Siggraph/Himmler26Siggraph.pdf">
-        <image src=/assets/images/siggraph26/full_paper.png class="pdf-thumbnail img-responsive">
-    </a>
-</div>
-
-<div class="row g-4 py-2 mt-1">
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://github.com/Paul-Hi/biharmonic-monte-carlo">
-            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Code</strong></h5></button>
-        </a>
-    </div>
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled"
-            aria-disabled="true">
-            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
-            </button>
-        </a>
-    </div>
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://doi.org/10.1145/3811397">
-            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src=/assets/images/open_access.svg></img></h5>
-            </button>
-        </a>
-    </div>
-</div>
-
-<div class="row row-cols-1 g-4 py-2">
-    <div class="col text-center">
-        <image src=/assets/images/siggraph26/teaser.png width="100%"
-            class="border border-2 img-responsive my-4">
-            <!--
-            <video id="teaser" width="100%" playsinline autoplay loop muted controls>
-                <source src=/assets/videos/Teaser_w_subtitles.mp4 type="video/mp4" />
-            </video>
-            -->
-    </div>
-</div>
-
-<div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col text-center">
-        <h3 class="text-center">
-            Abstract
-        </h3>
-        <p style="text-align: justify;">
-            Stochastic Monte Carlo solvers for partial differential equations (PDEs) recently gained popularity in
-            computer graphics, finding applications in geometry processing, rendering, simulation, and visualization. At
-            present, there exists no Monte Carlo solver for the rendering of biharmonic diffusion curves, an
-            artist-friendly smooth vector graphics primitive. The fourth-order biharmonic equation of biharmonic
-            diffusion curves can be split into two second-order PDEs, namely a Laplace and a Poisson equation. However,
-            since biharmonic diffusion curves set Dirichlet and inhomogeneous Neumann conditions at the same time, these
-            two second-order PDEs are tightly coupled and can hence not be solved directly. We propose to treat the
-            rendering of biharmonic diffusion curves as an inverse problem, in which the Dirichlet data of the Laplace
-            equation is unknown. We formulate a variational energy optimization, such that the user-defined boundary
-            conditions are met. Thereby, the necessary gradients are estimated stochastically by solving two
-            second-order problems with Dirichlet boundary conditions only.
-        </p>
-    </div>
-</div>
-
-<div class="row row-cols-1 g-4 py-2">
-    <div class="col">
-        <h3 class="text-center">
-            BibTeX
-        </h3>
-        <pre><code id="bibtex">
-            @article{Himmler26Siggraph,
-                author = {Himmler, Paul and G{\"u}nther, Tobias},
-                title = {Monte Carlo Rendering of Biharmonic Diffusion Curves},
-                journal = {ACM Transactions on Graphics (SIGGRAPH)},
-                volume = {45},
-                number = {4},
-                pages = {107:1-107:12},
-                year = {2026},
-                publisher = {ACM},
-                address = {Los Angeles, United States},
-                doi = {10.1145/3811397},
-              }
-                </code></pre>
-    </div>
-</div>
-
-<div class="row row-cols-1 g-4 py-2">
-    <div class="col text-center">
-        <h3>
-            Acknowledgements
-        </h3>
-        <p style="text-align: justify;">
-            The Zephyr and Dolphin scene originate from Orzan et al.. The Sunset is from Tian and Günther. This work was
-            supported by DFG grant no. GU 945/3-1.
-        </p>
-    </div>
-</div>
-</div>
     </div>
 
     <footer class="d-flex justify-content-around align-items-center mt-auto py-3">

@@ -12,10 +12,10 @@ install: ## Install Ruby dependencies
 	bundle install
 
 build: ## Build the site
-	bundle exec jekyll build
+	RUBYOPT="-W0" bundle exec jekyll build
 
 serve: ## Serve the site locally
-	bundle exec jekyll serve --livereload --host 0.0.0.0
+	RUBYOPT="-W0" bundle exec jekyll serve --livereload --host 0.0.0.0
 
 clean: ## Clean build directory
 	bundle exec jekyll clean

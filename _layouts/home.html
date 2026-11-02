@@ -2,110 +2,179 @@
 layout: default
 ---
 
-<div class="container fullscreen-hero px-4 fade-in">
-    <div class="row flex-lg-row align-items-center g-5 main-hero">
-        <div class="col-10 col-sm-8 col-lg-6">
-            <div class="d-flex">
-                <img src={{ "/assets/images/test_me.png" | relative_url }} alt="Me"
-                    class="rounded-circle ms-lg-auto my-auto object-fit-contain border border-4 border-primary hero-image-max"
-                    loading="lazy">
-                <ul class="social-list d-flex flex-column mx-auto my-auto">
-                    <li> <a href="https://github.com/Paul-Hi"><i class="fa-brands fa-github"></i></a></li>
-                    <li> <a href="https://www.linkedin.com/in/paul-himmler-92b092152/"><i
-                                class="fa-brands fa-linkedin"></i></a></li>
-                    <li> <a href="https://twitter.com/paulhihihi"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li> <a href="https://orcid.org/0009-0000-3825-045X"><i class="fa-brands fa-orcid"></i></a></li>
-                    <li> <a href="https://www.researchgate.net/profile/Paul-Himmler"><i
-                                class="fa-brands fa-researchgate"></i></a></li>
-                    <li> <a href="https://scholar.google.com/citations?user=I__va7IAAAAJ&hl=de&oi=ao"><i
-                                class="fa-brands fa-google-scholar"></i></a></li>
-                </ul>
+<section class="container px-4 py-4 fade-in">
+    <div class="row align-items-center g-4">
+        <div class="col-md-3 text-center">
+            <img src="{{ '/assets/images/test_me.webp' | relative_url }}" alt="Paul Himmler"
+                class="rounded-circle shadow-sm border border-2 border-primary-subtle hero-portrait-img mb-2 mb-md-0"
+                loading="eager">
+        </div>
+        <div class="col-md-9" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+            <h1 class="display-5 fw-bold text-body-emphasis mb-1">Paul Himmler</h1>
+            <p class="lead text-primary-emphasis mb-2">PhD Candidate in Visual Computing</p>
+            <p class="fs-5 text-body mb-2 lh-base">
+                I am a PhD candidate under the supervision of <a href="https://vc.tf.fau.de/contact/tobias-guenther/"><b>Prof. Dr.-Ing. Tobias Günther</b></a>
+                at the <a href="https://vc.tf.fau.de/"><b>Professorship for Visual Computing</b></a> at <a href="https://www.fau.eu/"><b>FAU Erlangen-Nürnberg</b></a>.
+            </p>
+            <p class="fs-5 text-body mb-3 lh-base">
+                My research primarily focuses on <b>inverse rendering</b> and <b>variational optimization problems</b> in visual computing as well as grid-free
+                <b>Monte Carlo methods</b> for solving <b>partial differential equations</b>. This involves the development of <b>numerical optimization techniques</b>
+                that are highly parallelized on GPUs. I am passionate about collaborative research and thrive in interdisciplinary environments that inspire the exploration of novel and complex research paths.
+            </p>
+            <ul class="d-flex flex-row flex-wrap gap-3 list-unstyled social-list align-items-center mb-0 mt-3">
+                <li><a href="https://github.com/Paul-Hi" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://scholar.google.com/citations?user=I__va7IAAAAJ&hl=de&oi=ao" aria-label="Google Scholar" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a></li>
+                <li><a href="https://orcid.org/0009-0000-3825-045X" aria-label="ORCID" title="ORCID"><i class="fa-brands fa-orcid"></i></a></li>
+                <li><a href="https://www.researchgate.net/profile/Paul-Himmler" aria-label="ResearchGate" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/paul-himmler-92b092152/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://twitter.com/paulhihihi" aria-label="X / Twitter" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://bsky.app/profile/paul-hi.bsky.social" aria-label="Bluesky" title="Bluesky"><i class="fa-brands fa-bluesky"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="container px-4 py-4 fade-in" id="publications" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom border-secondary-subtle mb-4">Publications</h2>
+    {% assign publications = site.projects | where: "category", "publication" %}
+    {% assign current_sub = "" %}
+    {% for proj in publications %}
+    {% if proj.subcategory != current_sub %}
+    {% assign current_sub = proj.subcategory %}
+    <h3 class="pb-2 display-7 fs-4 border-bottom border-secondary-subtle mb-4 {% unless forloop.first %}mt-5{% endunless %}">
+        {% if current_sub == "journal" %}Journal{% elsif current_sub == "thesis" %}Thesis{% else %}{{ current_sub | capitalize }}{% endif %}
+    </h3>
+    {% endif %}
+    <div class="card publication-card mb-4">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-md-4 publication-col-img">
+                <div class="publication-card-img-wrapper h-100">
+                    {% if proj.project_url %}
+                    <a href="{{ proj.project_url | relative_url }}" class="d-block h-100">
+                        <img class="publication-card-img" src="{{ proj.image | relative_url }}" alt="{{ proj.title }}" loading="lazy">
+                    </a>
+                    {% else %}
+                    <img class="publication-card-img" src="{{ proj.image | relative_url }}" alt="{{ proj.title }}" loading="lazy">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-8 publication-col-content">
+                <div class="card-body d-flex flex-column h-100 p-4">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <span class="venue-pill">{{ proj.badge }}</span>
+                        {% if proj.venue %}
+                        <span class="text-body-secondary small">
+                            {{ proj.venue }}
+                        </span>
+                        {% endif %}
+                    </div>
+
+                    {% if proj.project_url %}
+                    <h4 class="card-title fw-bold mb-2">
+                        <a href="{{ proj.project_url | relative_url }}" class="text-decoration-none text-body-emphasis">{{ proj.title }}</a>
+                    </h4>
+                    {% else %}
+                    <h4 class="card-title fw-bold mb-2 text-body-emphasis">{{ proj.title }}</h4>
+                    {% endif %}
+
+                    {% if proj.authors %}
+                    <p class="card-text text-body-secondary mb-2 small">
+                        {{ proj.authors }}
+                    </p>
+                    {% endif %}
+
+                    {% if proj.summary %}
+                    <p class="card-text text-body mb-3 publication-summary">{{ proj.summary }}</p>
+                    {% endif %}
+
+                    <div class="mt-auto pt-2 d-flex flex-wrap align-items-center">
+                        {% if proj.project_url %}
+                        <a class="btn btn-sm btn-outline-primary me-2 mb-2" href="{{ proj.project_url | relative_url }}">
+                            <i class="fa-regular fa-window-maximize me-1"></i> Project Page
+                        </a>
+                        {% endif %}
+                        {% if proj.pdf_url %}
+                        <a class="btn btn-sm btn-outline-secondary me-2 mb-2" href="{{ proj.pdf_url }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-regular fa-file-pdf me-1"></i> PDF
+                        </a>
+                        {% endif %}
+                        {% if proj.code_url %}
+                        <a class="btn btn-sm btn-outline-secondary me-2 mb-2" href="{{ proj.code_url }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github me-1"></i> Code
+                        </a>
+                        {% endif %}
+                        {% if proj.video_url %}
+                        <a class="btn btn-sm btn-outline-secondary me-2 mb-2" href="{{ proj.video_url }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-video me-1"></i> Video
+                        </a>
+                        {% endif %}
+                        {% if proj.doi_url %}
+                        <a class="btn btn-sm btn-outline-secondary me-2 mb-2" href="{{ proj.doi_url }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> DOI
+                        </a>
+                        {% endif %}
+                        {% if proj.project_url == nil and proj.content and proj.content != "" %}
+                        <button class="btn btn-sm btn-outline-secondary me-2 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#abstract-{{ forloop.index }}" aria-expanded="false" aria-controls="abstract-{{ forloop.index }}">
+                            <i class="fa-solid fa-align-left me-1"></i> Abstract
+                        </button>
+                        {% endif %}
+                    </div>
+
+                    {% if proj.project_url == nil and proj.content and proj.content != "" %}
+                    <div class="collapse mt-3" id="abstract-{{ forloop.index }}">
+                        <div class="p-3 rounded bg-body-tertiary border border-secondary-subtle small lh-base text-body">
+                            {{ proj.content | markdownify }}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
-        <div class="col-lg-6" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Hi there!</h1>
-            <p class="lead">I am a PhD candidate at the <a href="https://vc.tf.fau.de/">Professorship for Visual
-                    Computing</a> at <a href="https://www.fau.eu/">FAU Erlangen-Nürnberg</a>,
-                supervised by Prof. Dr.-Ing. Tobias Günther.</p>
-        </div>
     </div>
-    <div class="row text-center">
-        <div class="project-scroll scroll-button">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-    </div>
-</div>
+    {% endfor %}
+</section>
 
-<div class="container-fluid fade-in bg-secondary-subtle" id="about">
-    <div class="container px-4 py-5" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
-        <h2 class="pb-3 display-6 border-bottom border-secondary"> About </h2>
-        <div class="row flex-lg-row align-items-center g-5 py-5">
-            <p class="lead">
-                I am interested in everything that has to do with visualization and computer graphics ... And most other
-                things
-                too.
-                <br><br>
-                Currently I am a PhD candidate at the
-                <a href="https://vc.tf.fau.de/">Professorship for Visual
-                    Computing</a> at <a href="https://www.fau.eu/">FAU Erlangen-Nürnberg</a>. My research focus is on
-                End-to-End Optimization for
-                Energy-Driven Scientific Visualization.
-                <br><br>
-                I previously studied computer science at <a href="https://www.fau.eu/">FAU Erlangen-Nürnberg</a>. You
-                can find more information about this and more on my <a
-                    href="https://www.linkedin.com/in/paul-himmler-92b092152/">LinkedIn profile</a>.
-            </p>
-        </div>
-    </div>
-</div>
+<section class="container px-4 py-4 mb-5 fade-in" id="projects" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <h2 class="pb-3 display-6 border-bottom border-secondary-subtle mb-4">Projects</h2>
 
-<div class="container px-4 py-5 pb-2 fade-in" id="project-cards" data-aos="fade-right"
-    data-aos-anchor-placement="top-bottom">
-    <h2 class="pb-3 display-6 border-bottom border-secondary"> Projects </h2>
-
-    <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
-        {% for proj in site.projects %}
-        {% assign urlTitle = proj.title | cgi_escape %}
-        <div class="col project-showcase-col">
-            <div class="card project-card overflow-hidden text-overflow-ellipsis rounded-4 project-showcase"
-                data-bs-toggle="modal" data-bs-toggle="modal" href="#{{urlTitle }}">
-                <img class="card-img card-cover" src="{{ proj.image }}" alt=" Project image" loading="lazy">
-                <div class="d-flex card-img-overlay inline-block flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h3 class="mt-5 mb-4 display-6 lh-1 fw-bold no-hover">{{ proj.title }}</h3>
-                    <ul class="d-flex list-unstyled mt-auto no-hover">
-                        <li class="me-auto">
-                            {{ proj.icon }}
-                        </li>
-                        <li class="d-flex align-items-center me-3">
-                            <small>{{ proj.type }}</small>
-                        </li>
-                    </ul>
+    {% assign software_projects = site.projects | where: "category", "project" %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for proj in software_projects %}
+        <div class="col">
+            <div class="card project-card h-100 d-flex flex-column">
+                <div class="project-card-img-wrapper">
+                    {% if proj.code_url %}
+                    <a href="{{ proj.code_url }}" target="_blank" rel="noopener noreferrer" class="d-block h-100">
+                        <img class="project-card-img" src="{{ proj.image | relative_url }}" alt="{{ proj.title }}" loading="lazy">
+                    </a>
+                    {% else %}
+                    <img class="project-card-img" src="{{ proj.image | relative_url }}" alt="{{ proj.title }}" loading="lazy">
+                    {% endif %}
+                </div>
+                <div class="card-body d-flex flex-column p-4 flex-grow-1">
+                    {% if proj.badge %}
+                    <span class="venue-pill mb-2 align-self-start">{{ proj.badge }}</span>
+                    {% endif %}
+                    <h5 class="card-title fw-bold mb-2 text-body-emphasis">{{ proj.title }}</h5>
+                    {% if proj.summary %}
+                    <p class="card-text text-body-secondary small flex-grow-1 mb-3">{{ proj.summary }}</p>
+                    {% endif %}
+                    <div class="mt-auto pt-2">
+                        {% if proj.code_url %}
+                        <a class="btn btn-sm btn-outline-primary" href="{{ proj.code_url }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github me-1"></i> Code
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
-{% for proj in site.projects %}
-{% assign urlTitle = proj.title | cgi_escape %}
-<div class="modal fade" id="{{ urlTitle }}" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header border-secondary">
-                <h3 class="modal-title display-6">{{ proj.title }}</h3>
-                <div type="button" class="btn-close px-3" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div>
-            <div class="modal-body">
-                {{ proj }}
-            </div>
+
+    <div class="row text-center mt-5">
+        <div class="to-start scroll-button" role="button" aria-label="Back to top" title="Back to top">
+            <i class="fa-solid fa-chevron-up"></i>
         </div>
     </div>
-</div>
-{% endfor %}
-<div class="row text-center">
-    <div class="to-start scroll-button">
-        <i class="fa-solid fa-chevron-up"></i>
-    </div>
-</div>
+</section>

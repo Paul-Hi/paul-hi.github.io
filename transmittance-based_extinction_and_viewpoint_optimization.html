@@ -1,134 +1,61 @@
 ---
 layout: project
 title: Transmittance-based Extinction and Viewpoint Optimization
+venue: "Computer Graphics Forum (Proc. EuroVis) 2024"
+pdf_url: "https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.pdf"
+pdf_thumbnail: "/assets/images/eurovis24/full_paper.png"
+supplementary_url: "https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis_additional.pdf"
+supplementary_label: "Additional"
+video_url: "https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.mp4"
+video_label: "Supplementary Video"
+doi_url: "https://doi.org/10.1111/cgf.15096"
+teaser_image: "/assets/images/eurovis24/tbo.png"
+teaser_video: "/assets/videos/eurovis24/Teaser_w_subtitles.mp4"
+abstract: >
+  A long-standing challenge in volume visualization is the effective communication of relevant spatial
+  structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of
+  every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples
+  along view rays or by optimizing a spatially-varying extinction field through an energy minimization. This
+  paper introduces an approach to jointly optimize the extinction field and the viewpoint, and we demonstrate
+  that viewpoints can be found that achieve better visibility, higher contrast, and require fewer modifications
+  of the original volume data than when using predefined, static viewpoints. Our approach is based on a novel
+  formulation of the transmittance-based visibility optimization, which incorporates view-dependent
+  importance and opacity transfer functions, and uses modern automatic differentiation to compute the
+  gradients of the energy with respect to the camera parameters. In addition, we propose an interactive
+  visualization technique that allows domain experts to explore the optimization results in real-time.
+bibtex: |
+  @article{Himmler24EuroVis,
+    author = {Himmler, Paul and G{\"u}nther, Tobias},
+    title = {Transmittance-based Extinction and Viewpoint Optimization},
+    journal = {Computer Graphics Forum (Eurographics Conference on Visualization)},
+    volume = {43},
+    number = {3},
+    year = {2024},
+    publisher = {Eurographics},
+    address = {Odense, Denmark},
+  }
+acknowledgements: >
+  We thank Gábor Janiga from the University of Magdeburg for providing the ROTATING MIXER.
+  The EARTH MANTLE was simulated by Anna Gülcher from the NASA Jet Propulsion Laboratory.
+  The VISIBLE HUMAN data set was provided by Peter Ratiu via The National Library of Medicine, Bethesda, MD.
+  The HEPTANE FLAME data set was released by the University of Utah Center for the Simulation of Accidental Fires and Explosions.
+  This work was supported by DFG grant no. GU 945/3-1.
 ---
 
-<div class="row g-4 py-5">
-    <h1 class="col-md-12 text-center">
-        <b>Transmittance-based Extinction and Viewpoint Optimization</b>
-        <br>
-        <small>
-            Computer Graphics Forum (Proc. EuroVis) 2024
-        </small>
-    </h1>
-</div>
-
-<div class="row g-4 pt-2 pb-5">
-    <div class="col-md-12 text-center">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <h4><strong><a href="/index.html">
-                            Paul Himmler
-                        </a></strong></h4>
-            </li>
-            <li class="list-inline-item">
-                <h4><strong><a href="https://vc.tf.fau.de/staff/tobias-guenther.html">
-                            Tobias Günther
-                        </a></strong></h4>
-            </li>
-        </ul>
-        <h5>Friedrich-Alexander-Universität Erlangen-Nürnberg</h5>
-    </div>
-</div>
-
-<div class="row g-4 py-2">
-    <a style="text-align:center;" href="https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.pdf">
-        <image src={{ "/assets/images/eurovis24/full_paper.png" | relative_url }} class="pdf-thumbnail img-responsive">
-    </a>
-</div>
-
-<div class="row g-4 py-2 mt-1">
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis_additional.pdf">
-            <h5 class="m-auto"><i class="fa-regular fa-file-pdf"></i> <strong>Additional</strong></h5></button>
-        </a>
-    </div>
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://vc.tf.fau.de/publications/Himmler24EuroVis/Himmler24EuroVis.mp4">
-            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Supplementary Video</strong></h5>
-            </button>
-        </a>
-    </div>
-    <!-- <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center disabled"
-            aria-disabled="true">
-            <h5 class="m-auto"><i class="fa-regular fa-file-video"></i> <strong>Presentation Video</strong></h5>
-            </button>
-        </a>
-    </div> -->
-    <div class="col md-auto">
-        <a role="button" class="btn btn-secondary mx-1 w-100 h-100 d-flex align-items-center"
-            href="https://doi.org/10.1111/cgf.15096">
-            <h5 class="m-auto"><strong>DOI</strong> <img class="inlineh5-svg" src={{ "/assets/images/open_access.svg" |
-                    relative_url }}></img></h5>
-            </button>
-        </a>
-    </div>
-</div>
-
-<div class="row row-cols-1 g-4 py-2">
-    <div class="col text-center">
-        <image src={{ "/assets/images/eurovis24/tbo.png" | relative_url }} width="100%"
-            class="border border-2 img-responsive my-4">
-            <video id="teaser" width="100%" playsinline autoplay loop muted controls>
-                <source src={{ "/assets/videos/eurovis24/Teaser_w_subtitles.mp4" | relative_url }} type="video/mp4" />
-            </video>
-    </div>
-</div>
-
+<script src="{{ '/assets/js/interactive_canvas.js' | relative_url }}"></script>
 <div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col text-center">
-        <h3 class="text-center">
-            Abstract
-        </h3>
-        <p style="text-align: justify;">
-            A long-standing challenge in volume visualization is the effective communication of relevant spatial
-            structures that might be hidden due to occlusions. Given a scalar field that indicates the importance of
-            every point in the domain, previous work synthesized volume visualizations by weighted averaging of samples
-            along view rays or by optimizing a spatially-varying extinction field through an energy minimization. This
-            energy minimization, however, did not directly measure the contribution of an individual sample to the final
-            pixel color. In this paper, we measure the visibility of relevant structures directly by incorporating the
-            transmittance into a non-linear energy minimization. For the first time, we not only perform a
-            transmittance-based extinction optimization, we concurrently optimize the camera position to find ideal
-            viewpoints. We derive the partial derivatives for the gradient-based optimization symbolically, which makes
-            the application of automatic differentiation methods unnecessary. The transmittance-based formulation gives
-            a direct visibility measure that is communicated to the user in order to make aware of potentially
-            overlooked relevant structures. Our approach is compatible with any measure of importance and its
-            versatility is demonstrated in multiple data sets.
-        </p>
-    </div>
-</div>
-
-<!-- <div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col">
-        <h3 class="text-center">
-            Video
-        </h3>
-        <div class="text-center">
-            <video id="teaser" width="100%" playsinline controls>
-                <source src="" type="video/mp4" />
-            </video>
-        </div>
-    </div>
-</div> -->
-
-<script src={{ "/assets/js/interactive_canvas.js" | relative_url }}></script>
-<div class="row row-cols-1 g-4 pt-2 pb-5">
-    <div class="col align-items-center">
+    <div class="col-12 align-items-center">
         <h3 class="text-center">
             Interactive
         </h3>
-        <p style="text-align: justify;" class="pb-4">
+        <p class="mt-3 pb-4">
             An interactive comparison of extinction optimization methods on the EARTH MANTLE, VISIBLE HUMAN, HEPTANE
             FLAME, and ROTATING MIXER data set. Viola et al. <a
                 href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a> and Marchesin et al. <a
                 href="https://doi.org/10.1109/TVCG.2010.30">[MMD10]</a> did not include shadow optimizations and are
             therefore compared without shadowing. In addition, Ament et al. <a
                 href="https://doi.org/10.1109/TVCG.2016.2569080">[AZD17]</a> with and without shadowing were compared
-            with
-            our method. Previous approaches (<a href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a>,<a
+            with our method. Previous approaches (<a href="https://doi.org/10.1109/VISUAL.2004.48">[VKG04]</a>, <a
                 href="https://doi.org/10.1109/TVCG.2010.30">[MMD10]</a>) provide limited depth perception. Ament et al.
             <a href="https://doi.org/10.1109/TVCG.2016.2569080">[AZD17]</a> has global parameters, making it difficult
             to bring out differently important structures throughout the domain. Some parts might even be lost entirely.
@@ -285,7 +212,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                         }
                     ]
                 },
-            }
+            };
         </script>
 
         <div class="accordion accordion-flush w-100" id="interactiveAccordion">
@@ -294,7 +221,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     <button class="btn btn-secondary rounded-top rounded-0 border-0 w-100 rotate-icon down d-flex"
                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseEarthMantle"
                         aria-expanded="false" aria-controls="collapseEarthMantle">
-                        <h5 class="m-auto"><strong>EARTH MANTLE</i></strong></h5><i
+                        <h5 class="m-auto"><strong>EARTH MANTLE</strong></h5><i
                             class="fa-solid fa-chevron-down pt-1"></i>
                     </button>
                 </div>
@@ -310,7 +237,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
                         data-bs-toggle="collapse" data-bs-target="#collapseVisMale" aria-expanded="false"
                         aria-controls="collapseVisMale">
-                        <h5 class="m-auto"><strong>VISIBLE HUMAN</i></strong></h5><i
+                        <h5 class="m-auto"><strong>VISIBLE HUMAN</strong></h5><i
                             class="fa-solid fa-chevron-down pt-1"></i>
                     </button>
                 </div>
@@ -325,7 +252,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
                         data-bs-toggle="collapse" data-bs-target="#collapseHeptaneFlame" aria-expanded="false"
                         aria-controls="collapseHeptaneFlame">
-                        <h5 class="m-auto"><strong>HEPTANE FLAME</i></strong></h5><i
+                        <h5 class="m-auto"><strong>HEPTANE FLAME</strong></h5><i
                             class="fa-solid fa-chevron-down pt-1"></i>
                     </button>
                 </div>
@@ -341,7 +268,7 @@ title: Transmittance-based Extinction and Viewpoint Optimization
                     <button class="btn btn-secondary rounded-0 border-0 w-100 rotate-icon d-flex" type="button"
                         data-bs-toggle="collapse" data-bs-target="#collapseMixer" aria-expanded="false"
                         aria-controls="collapseMixer">
-                        <h5 class="m-auto"><strong>ROTATING MIXER</i></strong></h5><i
+                        <h5 class="m-auto"><strong>ROTATING MIXER</strong></h5><i
                             class="fa-solid fa-chevron-down pt-1"></i>
                     </button>
                 </div>
@@ -369,77 +296,5 @@ title: Transmittance-based Extinction and Viewpoint Optimization
             const interactiveCanvas2 = new InteractiveCanvas(parentElement2, data[2], 6);
             const interactiveCanvas3 = new InteractiveCanvas(parentElement3, data[3], 6);
         </script>
-    </div>
-</div>
-
-<!--
-<div class="row">
-    <div class="col-md-8">
-        <h3>
-            Details
-        </h3>
-        <p class="text-justify">
-            Paragraph
-        </p>
-        <p style="text-align:center;">
-            <image src="" height="50px" class="img-responsive">
-        </p>
-        <video id="video0" width="100%" autoplay loop muted>
-            <source src="" type="video/mp4" />
-        </video>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-8">
-        <h3>
-            Results
-        </h3>
-        <p class="text-justify">
-            Paragraph
-        </p>
-        <p style="text-align:center;">
-            <image src="" height="50px" class="img-responsive">
-        </p>
-        <video id="video1" width="100%" autoplay loop muted>
-            <source src="" type="video/mp4" />
-        </video>
-    </div>
-</div>
--->
-
-<div class="row row-cols-1 g-4 py-2">
-    <div class="col">
-        <h3 class="text-center">
-            BibTeX
-        </h3>
-        <pre><code id="bibtex">
-            @article{Himmler24EuroVis,
-                author = {Himmler, Paul and G{\"u}nther, Tobias},
-                title = {Transmittance-based Extinction and Viewpoint Optimization},
-                journal = {Computer Graphics Forum (Eurographics Conference on Visualization)},
-                volume = {43},
-                number = {3},
-                year = {2024},
-                publisher = {Eurographics},
-                address = {Odense, Denmark},
-              }
-                </code></pre>
-    </div>
-</div>
-
-<div class="row row-cols-1 g-4 py-2">
-    <div class="col text-center">
-        <h3>
-            Acknowledgements
-        </h3>
-        <p style="text-align: justify;">
-            We thank G&aacutebor Janiga from the University of Magdeburg for providing the ROTATING MIXER.
-            The EARTH MANTLE was simulated by Anna Gülcher from the NASA Jet Propulsion Laboratory.
-            The VISIBLE HUMAN data set was provided by Peter Ratiu via The National Library of Medicine, Bethesda, MD.
-            The HEPTANE FLAME data set was released by the University of Utah Center for the Simulation of Accidental
-            Fires and Explosions.
-            This work was supported by DFG grant no. GU 945/3-1.
-        </p>
     </div>
 </div>
